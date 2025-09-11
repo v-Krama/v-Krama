@@ -22,4 +22,4 @@ Check out my portfolio website here:
 
 ### 📫 Connect with Me
 - ✉️ Email: bikramtamang293@gmail.com
-- 🌐 Portfolio: (https://v-Krama.github.io/portfolio/)
+- 🌐 Portfolio: (https://v-Krama.github.io/Portfolio/).
