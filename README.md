@@ -2,7 +2,7 @@
 
 Welcome to my GitHub profile!  
 Check out my portfolio website here:  
-➡️ [**Visit My Portfolio**](https://v-Krama.github.io/portfolio/)
+➡️ [**Visit My Portfolio**](https://v-krama.github.io/Portfolio/).
 
 ---
 
