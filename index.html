@@ -68,7 +68,7 @@
                     </ul>
                     <a href="#" class="btn">Download CV</a>
                 </div>
-                <div class="contact-form">
+                <!-- <div class="contact-form">
                     <h3>Get In Touch</h3>
                     <form id="contactForm">
                         <div class="form-group">
@@ -89,7 +89,32 @@
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                </div> -->
+
+                <div class="contact-form">
+                    <h3>Get In Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="formStatus"></div> <!-- optional message -->
                 </div>
+
             </div>
         </div>
     </section>
@@ -266,5 +291,32 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init("0ZU1kTIb2-QmkGRhd"); // your public key
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm(
+                'service_fq639re',      // Service ID
+                'template_afrc9x8',     // Template ID
+                this
+            )
+            .then(function() {
+                document.getElementById('formStatus').innerHTML = 
+                    "<p style='color:green;'>Message sent successfully!</p>";
+                document.getElementById('contactForm').reset();
+            }, function(error) {
+                document.getElementById('formStatus').innerHTML = 
+                    "<p style='color:red;'>Error sending message. Please try again.</p>";
+                console.error('EmailJS Error:', error);
+            });
+        });
+    </script>
+
 </body>
 </html>
