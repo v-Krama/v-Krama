@@ -1,4 +1,4 @@
-# 👋 Hi, I'm bikram
+# 👋 Hi, I'm vkram
 
 Welcome to my GitHub profile!  
 Check out my portfolio here:  
