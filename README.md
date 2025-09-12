@@ -4,7 +4,7 @@ Welcome to my GitHub profile!
 Check out my portfolio here:  
 ➡️ [**Visit My Portfolio**](https://v-krama.github.io/v-Krama/)  
 
----
+------
 
 ## 📜 About Me  
 💻 **Learner & Explorer** passionate about technology and problem-solving  
