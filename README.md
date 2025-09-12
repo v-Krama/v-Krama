@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Markib  
+# 👋 Hi, I'm bikram
 
 Welcome to my GitHub profile!  
 Check out my portfolio here:  
