@@ -4,20 +4,22 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v-Krama</title>
+    <meta name="description" content="Bikram Tamang - Computer Science Student and Technology Enthusiast">
+    <meta name="keywords" content="AI, Machine Learning, Cybersecurity, Web Development, Portfolio">
+    <title>Bikram Tamang - v-Krama Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Dark theme with eerie accents */
+        /* Improved CSS with better organization and responsiveness */
         :root {
             --dark-bg: #0a0a0a;
             --darker-bg: #050505;
             --card-bg: #121212;
             --text: #e0e0e0;
             --text-light: #a0a0a0;
-            --accent: #8a2be2; /* Purple accent */
+            --accent: #8a2be2;
             --accent-glow: #9370db;
-            --neon: #00ff9d; /* Neon green */
+            --neon: #00ff9d;
             --neon-glow: #00ff9d55;
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
@@ -32,6 +34,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -60,13 +66,13 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             color: var(--accent);
             text-shadow: 0 0 10px var(--accent-glow);
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: clamp(1.75rem, 4vw, 2rem);
             position: relative;
             padding-bottom: var(--spacing-xs);
             color: var(--neon);
@@ -87,7 +93,7 @@
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
             color: var(--accent);
         }
 
@@ -126,12 +132,13 @@
             box-shadow: 0 0 20px var(--neon-glow);
         }
 
+        /* Header Styles */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(10, 10, 10, 0.95);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             padding: 1rem 0;
@@ -150,6 +157,8 @@
             text-decoration: none;
             color: var(--text);
             font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
         }
 
         .logo span {
@@ -200,36 +209,40 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--neon);
+            background: none;
+            border: none;
         }
 
+        /* Hero Section */
         .hero {
             display: flex;
             align-items: center;
             min-height: 100vh;
-            padding: 5rem 0;
+            padding: 6rem 0 4rem;
             position: relative;
             overflow: hidden;
         }
 
         .hero-content {
             flex: 1;
-            margin-left: 450px;
-            max-width: 600px; /* prevents the heading from stretching too far */
+            max-width: 600px;
             padding-right: var(--spacing-md);
         }
+
         .hero-content h1 {
-        color: #ffffff; /* white text improves readability */
-        text-shadow: 
-            0 0 1px #02b81d,  /* inner glow */
-            0 0 2px #019a2f,
-            0 0 10px #01b91f,
-            0 0 20px #02870f; /* outer glow */
+            color: #ffffff;
+            text-shadow: 
+                0 0 1px #02b81d,
+                0 0 2px #019a2f,
+                0 0 10px #01b91f,
+                0 0 20px #02870f;
+            margin-bottom: var(--spacing-sm);
         }
 
         .hero-image {
-            flex: 0 0 30%;
+            flex: 0 0 40%;
             display: flex;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             position: relative;
         }
@@ -242,7 +255,7 @@
             transform: translate(-50%, -50%);
             width: 300px;
             height: 300px;
-            border-radius: 0%;
+            border-radius: 50%;
             background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
             opacity: 0.2;
             z-index: -1;
@@ -252,32 +265,35 @@
             width: 100%;
             max-width: 280px;
             height: auto;
-            border-radius: 60%;
-            box-shadow: 0 0 0px var(--accent-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 30px var(--accent-glow);
             transition: var(--transition);
-            border: 0px solid var(--accent);
+            border: 2px solid var(--accent);
             filter: grayscale(30%);
         }
 
         .hero-image img:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 0px var(--accent);
+            box-shadow: 0 0 40px var(--accent);
             filter: grayscale(0%);
         }
 
         .social-icons {
             margin-top: var(--spacing-md);
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .social-icons a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-right: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
             width: 45px;
             height: 45px;
             background: var(--card-bg);
             border-radius: 50%;
-            text-align: center;
-            line-height: 45px;
             color: var(--neon);
             transition: var(--transition);
             box-shadow: 0 0 10px var(--neon-glow);
@@ -305,6 +321,7 @@
             box-shadow: 0 0 20px var(--neon);
         }
 
+        /* About Section */
         .about-contact {
             padding: var(--spacing-xl) 0;
             background-color: var(--darker-bg);
@@ -348,6 +365,7 @@
             color: var(--text-light);
         }
 
+        /* Skills Section */
         .skills {
             padding: var(--spacing-xl) 0;
             position: relative;
@@ -385,6 +403,7 @@
             text-shadow: 0 0 10px var(--neon-glow);
         }
 
+        /* Projects Section */
         .projects {
             padding: var(--spacing-xl) 0;
             background-color: var(--darker-bg);
@@ -463,6 +482,7 @@
             font-weight: 600;
         }
 
+        /* Certifications Section */
         .certifications {
             padding: var(--spacing-xl) 0;
         }
@@ -498,11 +518,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
 
-        .certification-image embed {
+        .certification-image img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         .pdf-overlay {
@@ -555,6 +577,7 @@
             color: var(--neon);
         }
 
+        /* Footer */
         footer {
             background: linear-gradient(to right, var(--accent), var(--neon));
             color: black;
@@ -585,6 +608,8 @@
             display: flex;
             list-style: none;
             margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .footer-links li {
@@ -606,16 +631,50 @@
             color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Responsive Design */
+        /* Animation Enhancements */
+        .skill-item, .project-item, .certification-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .skill-item.in-view, .project-item.in-view, .certification-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Scary elements - toned down for professionalism */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px var(--neon-glow);
+            }
+            50% {
+                box-shadow: 0 0 15px var(--neon), 0 0 20px var(--neon);
+            }
+            100% {
+                box-shadow: 0 0 5px var(--neon-glow);
+            }
+        }
+        
+        .flicker {
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+        
+        /* Improved Responsive Design */
         @media (max-width: 992px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
             .hero {
                 flex-direction: column;
                 text-align: center;
@@ -625,6 +684,12 @@
             .hero-content, .hero-image {
                 flex: 1 100%;
                 padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin-left: 0;
+                max-width: 100%;
             }
             
             .hero-image {
@@ -634,6 +699,10 @@
             
             .hero-image img {
                 max-width: 250px;
+            }
+            
+            .social-icons {
+                justify-content: center;
             }
         }
 
@@ -654,6 +723,7 @@
                 justify-content: center;
                 transition: var(--transition);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
             }
             
             .nav-links.active {
@@ -662,10 +732,6 @@
             
             .nav-links li {
                 margin: var(--spacing-sm) 0;
-            }
-            
-            .hero-content, .hero-image {
-                text-align: center;
             }
             
             .info-list li {
@@ -691,14 +757,6 @@
                 padding: 0 var(--spacing-xs);
             }
             
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
             .hero {
                 padding: 6rem 0 var(--spacing-md);
             }
@@ -712,79 +770,22 @@
             .social-icons a {
                 width: 40px;
                 height: 40px;
-                line-height: 40px;
                 margin-right: 0.5rem;
+            }
+            
+            .info-list strong {
+                min-width: 80px;
             }
         }
 
-        /* Animation Enhancements */
-        .skill-item, .project-item, .certification-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .skill-item.in-view, .project-item.in-view, .certification-item.in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         @media (prefers-reduced-motion: reduce) {
             * {
                 transition: none !important;
                 animation: none !important;
             }
-        }
-
-        /* Scary elements */
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 5px var(--neon-glow);
-            }
-            50% {
-                box-shadow: 0 0 20px var(--neon), 0 0 30px var(--neon);
-            }
-            100% {
-                box-shadow: 0 0 5px var(--neon-glow);
-            }
-        }
-        
-        .flicker {
-            animation: flicker 3s infinite alternate;
-        }
-        
-        @keyframes flicker {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-        
-        .scan-line {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--neon);
-            box-shadow: 0 0 10px var(--neon);
-            z-index: 9999;
-            animation: scan 5s linear infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes scan {
-            0% {
-                top: 0%;
-            }
-            100% {
-                top: 100%;
+            
+            html {
+                scroll-behavior: auto;
             }
         }
     </style>
@@ -802,9 +803,9 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                 </ul>
-                <div class="menu-toggle">
+                <button class="menu-toggle" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -813,19 +814,19 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm ጌ-kram &#x1F642;</h1>
+                <h1>Hi, I'm Bikram Tamang &#x1F642;</h1>
                 <p style="text-align: justify;">A passionate and driven technology enthusiast with a strong interest in Artificial Intelligence, Machine Learning, Cybersecurity, Ethical Hacking, Networking, Cloud Computing, Web and Mobile Development, Data Science, DevOps, Blockchain, IoT, Automation, and Graphic Design. I am committed to continuous learning and leveraging cutting-edge technologies to create secure, scalable, and impactful solutions.</p>
                 <a href="#projects" class="btn pulse">View My Work</a>
                 <div class="social-icons">
-                    <a href=https://github.com/v-Krama><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/v-Krama" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="profile.png" alt="Bikram Tamang">
+            <div class="hero-image">
+                <img src="profile.png" alt="Bikram Tamang">
+            </div>
         </div>
     </section>
 
@@ -892,10 +893,10 @@
             <div class="projects-container">
                 <div class="project-item">
                     <div class="project-image">
-                        <img src="senti.png" alt="E-commerce Website">
+                        <img src="senti.png" alt="Sentiment Analysis Project">
                     </div>
                     <div class="project-info">
-                        <h3>Sentiment Analysis </h3>
+                        <h3>Sentiment Analysis</h3>
                         <p>Stockerbot(tweets) Sentiment Analysis using Support Vector Classificiation(SVC)</p>
                         <div class="project-tags">
                             <span>pandas</span>
@@ -907,10 +908,10 @@
                 </div>
                 <div class="project-item">
                     <div class="project-image">
-                        <img src="cifar.png" alt="Image Classificiation">
+                        <img src="cifar.png" alt="Image Classification Project">
                     </div>
                     <div class="project-info">
-                        <h3>Image Classificiation</h3>
+                        <h3>Image Classification</h3>
                         <p>Trained model using cifar 10 dataset using CNN Architecture for image classification.</p>
                         <div class="project-tags">
                             <span>numpy</span>
@@ -922,7 +923,7 @@
                 </div>
                 <div class="project-item">
                     <div class="project-image">
-                        <img src="scrape.png" alt="Web Scraping">
+                        <img src="scrape.png" alt="Web Scraping Project">
                     </div>
                     <div class="project-info">
                         <h3>Web Scraping</h3>
@@ -948,9 +949,8 @@
             <div class="certifications-container">
                 <!-- Certification 1 -->
                 <div class="certification-item">
-
                     <div class="certification-image">
-                        <embed src="AI.pdf" alt="Artificial Intelligence Certificate" type="application/pdf">
+                        <img src="ai-cert-thumb.jpg" alt="Artificial Intelligence Certificate">
                         <a href="AI.pdf" target="_blank" class="pdf-overlay">View PDF</a>
                         <div class="certification-badge">Credential</div>
                     </div>
@@ -967,7 +967,7 @@
                 <!-- Certification 2 -->
                 <div class="certification-item">
                     <div class="certification-image">
-                        <embed src="CEH.pdf" alt="Ethical Hacking Certificate" type="application/pdf">
+                        <img src="ceh-cert-thumb.jpg" alt="Ethical Hacking Certificate">
                         <a href="CEH.pdf" target="_blank" class="pdf-overlay">View PDF</a>
                         <div class="certification-badge">Credential</div>
                     </div>
@@ -984,7 +984,7 @@
                 <!-- Certification 3 -->
                 <div class="certification-item">
                     <div class="certification-image">
-                        <embed src="aws.pdf" alt="Cloud Computing Certificate" type="application/pdf">
+                        <img src="aws-cert-thumb.jpg" alt="Cloud Computing Certificate">
                         <a href="aws.pdf" target="_blank" class="pdf-overlay">View PDF</a>
                         <div class="certification-badge">Credential</div>
                     </div>
@@ -1000,7 +1000,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
@@ -1026,31 +1025,24 @@
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', 
+                menuToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
         });
         
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
         
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
         });
         
         // Animation on scroll
@@ -1086,8 +1078,8 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
         
-        // Add occasional flicker effect for scary ambiance
-        function randomFlicker() {
+        // Add subtle animation effect for professional touch
+        function subtleAnimation() {
             const elements = document.querySelectorAll('h1, h2, .btn');
             const randomElement = elements[Math.floor(Math.random() * elements.length)];
             
@@ -1097,12 +1089,12 @@
                 randomElement.classList.remove('flicker');
             }, 300);
             
-            setTimeout(randomFlicker, Math.random() * 10000 + 5000);
+            setTimeout(subtleAnimation, Math.random() * 15000 + 10000);
         }
         
-        // Start the flicker effect after page load
+        // Start the animation effect after page load
         window.addEventListener('load', () => {
-            setTimeout(randomFlicker, 5000);
+            setTimeout(subtleAnimation, 5000);
         });
     </script>
 </body>
