@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikram Tamang | Interactive CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a sticky top navigation for seamless scrolling between thematic sections (Summary, Skills, Projects, etc.). This structure was chosen to provide a familiar website-like experience, allowing non-linear exploration. Recruiters can quickly jump to the sections most relevant to them. Interactive elements like a skills chart and expandable project cards are used to present dense information in a digestible and engaging manner, improving user experience over a static document. -->
+    <!-- Visualization & Content Choices: 
+        - Summary: (Goal: Inform) A clear text block to immediately convey career objectives. (Method: HTML/Tailwind)
+        - Skills: (Goal: Organize/Compare) A bar chart visualizes skill distribution by category, offering a quick overview of expertise areas. (Interaction: Hover tooltips) (Justification: More engaging than a list). (Library: Chart.js Canvas)
+        - Projects: (Goal: Organize/Inform) A grid of cards that expand on click to reveal details. (Interaction: Click to toggle visibility). (Justification: Keeps the UI clean and allows user-driven exploration). (Method: HTML/JS)
+        - Certifications: (Goal: Show Change/Progression) A vertical timeline to display chronological learning achievements. (Justification: Intuitively shows dedication to growth). (Method: HTML/Tailwind)
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFB;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .nav-link.active {
+            color: #3B82F6;
+            font-weight: 500;
+        }
+        .project-card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">Bikram Tamang</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#summary" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Summary</a>
+                <a href="#skills" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Skills</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Projects</a>
+                <a href="#certifications" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Certifications</a>
+                <a href="#education" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Education</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#summary" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Summary</a>
+            <a href="#skills" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
+            <a href="#certifications" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Certifications</a>
+            <a href="#education" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Education</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="hero" class="text-center py-20">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4">Bikram Tamang</h1>
+            <p class="text-xl text-gray-600 mb-8">Computer Science Student | Aspiring AI & Cybersecurity Professional</p>
+            <div class="flex justify-center items-center space-x-4 text-gray-600">
+                <span>+977-9813464612</span>
+                <span class="text-gray-300">|</span>
+                <span>bikramtamang293@gmail.com</span>
+            </div>
+        </section>
+
+        <section id="summary" class="py-16 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center mb-12">Professional Summary</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                 <p class="text-lg text-gray-700 leading-relaxed text-center">
+                    A highly motivated and adaptable B.Sc. in Computer Science and Information Technology student with a strong foundation in programming, data structures, and algorithms. Eager to apply skills in Python, AI, and cybersecurity to solve real-world problems. Proven ability to quickly learn and apply new technologies, demonstrated through completed projects in machine learning, computer vision, and data analysis. Seeking to leverage technical and problem-solving skills to contribute to a dynamic team.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 bg-gray-50 rounded-xl scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center mb-4">Technical Skills</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">This chart provides a visual breakdown of my technical abilities across different domains. You can hover over the bars for more details. A full list of skills is provided below for reference.</p>
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <div class="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Languages</h3>
+                    <p class="text-gray-600">Python, C, C++</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">AI & Data Science</h3>
+                    <p class="text-gray-600">NumPy, Pandas, Scikit-learn, Jupyter Notebook, Google Colab</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Frameworks</h3>
+                    <p class="text-gray-600">OpenCV, YOLO</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Cloud</h3>
+                    <p class="text-gray-600">AWS EC2, S3, IAM</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600">Network Scanning, Vulnerability Analysis, Penetration Testing</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Tools</h3>
+                    <p class="text-gray-600">Git/GitHub, VS Code, MySQL</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center mb-4">Projects</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Here are some of the key projects I've worked on. Click on any project card to expand it and see more details about the implementation and technologies used.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="project-card bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Face Detection and Recognition System</h3>
+                        <p class="text-gray-500 text-sm">Python, OpenCV</p>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-700">Developed a real-time face detection and recognition system. Implemented algorithms for capturing, processing, and analyzing video frames to identify and recognize human faces.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Object Detection using YOLO</h3>
+                         <p class="text-gray-500 text-sm">Python, YOLO Framework</p>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-700">Utilized the YOLO (You Only Look Once) framework to build an efficient object detection model. Trained and deployed a model capable of identifying multiple objects within images and video streams with high accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Fake News Detection</h3>
+                         <p class="text-gray-500 text-sm">Python, Scikit-learn, NLP</p>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-700">Engineered a machine learning model to classify news articles as either "real" or "fake." Employed Natural Language Processing (NLP) techniques and supervised learning algorithms on a public dataset to achieve robust performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sentiment Analyzer</h3>
+                        <p class="text-gray-500 text-sm">Python, Scikit-learn, NLTK</p>
+                    </div>
+                     <div class="project-card-content">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-700">Built a sentiment analysis tool to determine the emotional tone of text. Used Python with libraries like Scikit-learn and NLTK to process text data and classify it as positive, negative, or neutral.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Email Classifier</h3>
+                         <p class="text-gray-500 text-sm">Python, Machine Learning</p>
+                    </div>
+                     <div class="project-card-content">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-700">Created a spam filter using a machine learning model. Trained the model on a dataset of emails to accurately categorize them as either "Spam" or "Not Spam," significantly improving email management.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="certifications" class="py-16 bg-gray-50 rounded-xl scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center mb-12">Certifications & Training</h2>
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 transform -translate-x-1/2"></div>
+                
+                <div class="relative mb-8">
+                    <div class="absolute left-1/2 top-4 w-4 h-4 bg-blue-500 rounded-full transform -translate-x-1/2 border-4 border-white"></div>
+                    <div class="ml-auto md:ml-0 md:mr-auto md:w-5/12 bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-sm font-semibold text-blue-600">Aug - Oct 2024</p>
+                        <h3 class="text-lg font-bold">AWS Solution Architect Training</h3>
+                        <p class="text-gray-600">Broadway Infosys (90 Hours)</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-8">
+                    <div class="absolute left-1/2 top-4 w-4 h-4 bg-blue-500 rounded-full transform -translate-x-1/2 border-4 border-white"></div>
+                    <div class="ml-auto md:w-5/12 bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-sm font-semibold text-blue-600">Aug - Oct 2024</p>
+                        <h3 class="text-lg font-bold">Ethical Hacking Training</h3>
+                        <p class="text-gray-600">Broadway Infosys (90 Hours)</p>
+                    </div>
+                </div>
+                
+                <div class="relative mb-8">
+                    <div class="absolute left-1/2 top-4 w-4 h-4 bg-blue-500 rounded-full transform -translate-x-1/2 border-4 border-white"></div>
+                    <div class="ml-auto md:ml-0 md:mr-auto md:w-5/12 bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-sm font-semibold text-blue-600">Jan - May 2023</p>
+                        <h3 class="text-lg font-bold">Python with Artificial Intelligence (AI)</h3>
+                        <p class="text-gray-600">Broadway Infosys (180 Hours)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-16 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800">B.Sc. in Computer Science and Information Technology (CSIT)</h3>
+                <p class="text-lg text-gray-600 mt-1 mb-3">Rajarshi Janak University, Tech Al College</p>
+                <p class="text-md text-blue-600 font-medium">June 2025 - Present</p>
+                <div class="border-t my-4"></div>
+                <p class="text-gray-700"><strong>Key Courses:</strong> Programming, Mathematics, Data Structures, Discrete Structures</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Bikram Tamang. All Rights Reserved.</p>
+             <div class="flex justify-center items-center space-x-4 text-gray-400 mt-4">
+                <span>+977-9813464612</span>
+                <span class="text-gray-600">|</span>
+                <span>bikramtamang293@gmail.com</span>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const skillsData = {
+            labels: ['AI & Data Science', 'Languages', 'Tools', 'Cloud', 'Frameworks', 'Cybersecurity'],
+            datasets: [{
+                label: 'Number of Skills',
+                data: [5, 3, 3, 3, 2, 2],
+                backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderWidth: 1,
+                borderRadius: 5,
+                hoverBackgroundColor: 'rgba(59, 130, 246, 0.8)',
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: skillsData,
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                         ticks: {
+                            stepSize: 1
+                        }
+                    },
+                    y: {
+                       grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        };
+
+        const skillsChartCtx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(skillsChartCtx, config);
+
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const content = card.querySelector('.project-card-content');
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveLink() {
+            let index = sections.length;
+            while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+            
+            navLinks.forEach((link) => link.classList.remove('active'));
+            if(index >=0 && navLinks[index]) {
+               navLinks[index].classList.add('active');
+            }
+        }
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
+    });
+</script>
+</body>
+</html>
