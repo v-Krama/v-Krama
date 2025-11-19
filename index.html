@@ -1,1522 +1,1047 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikram Tamang | AI & Cloud Solutions Architect</title>
-    <meta name="description" content="Bikram Tamang - Building intelligent, secure cloud-native systems with expertise in AI, cybersecurity, and cloud infrastructure.">
+    <title>Bikram Tamang | Cyber-AI Cloud Architect | AWS Solutions Architect</title>
+    <meta name="description" content="Bikram Tamang - AWS Certified Solutions Architect, Ethical Hacker & AI/ML Specialist. Expert in cloud architecture, cybersecurity, and artificial intelligence.">
+    <meta name="keywords" content="AI engineer, cybersecurity expert, AWS solutions architect, machine learning, neural networks, penetration testing, cloud security, DevSecOps, MLOps">
+    <meta name="author" content="MiniMax Agent">
+    <meta name="theme-color" content="#4361EE">
     
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elite-cyber-ai.cloud/">
+    <meta property="og:title" content="Bikram Tamang - Cyber-AI Cloud Architect">
+    <meta property="og:description" content="AWS Certified Solutions Architect | Certified Ethical Hacker | AI/ML Specialist - Building secure, intelligent cloud solutions.">
+    <meta property="og:image" content="https://elite-cyber-ai.cloud/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bikram Tamang - Cyber-AI Cloud Architect">
+    <meta name="twitter:description" content="AWS Certified Solutions Architect | CEH | AI/ML Specialist">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bikram Tamang",
+        "url": "https://elite-cyber-ai.cloud",
+        "jobTitle": "AI Engineer | Cybersecurity Expert | AWS Solutions Architect",
+        "description": "Elite specialist in artificial intelligence, advanced cybersecurity, and cloud infrastructure engineering",
+        "sameAs": [
+            "https://linkedin.com/in/elite-cyber-ai",
+            "https://github.com/elite-cyber-ai"
+        ],
+        "knowsAbout": ["Machine Learning", "Deep Learning", "Penetration Testing", "Zero Trust Security", "AWS Architecture", "DevSecOps", "MLOps", "Threat Intelligence", "Neural Networks", "Kubernetes Security"]
+    }
+    </script>
     
-    <style>
-        /* ------------------------- */
-        /* --- PREMIUM COLOR SCHEME */
-        /* ------------------------- */
-        :root {
-            --deep-navy: #0F1A30;
-            --sage-green: #87A96B;
-            --terracotta: #D2691E;
-            --cream: #F5F5DC;
-            --soft-gold: #D4AF37;
-            --charcoal: #36454F;
-            --lavender: #E6E6FA;
-            
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 3rem;
-            --spacing-xl: 6rem;
-
-            --border-radius: 8px;
-            --border-radius-lg: 16px;
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.12);
-            --shadow-deep: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--charcoal) 100%);
-            color: var(--cream);
-            font-family: var(--font-body);
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* ------------------------- */
-        /* --- ELEGANT BACKGROUND -- */
-        /* ------------------------- */
-        .elegant-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(135, 169, 107, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(210, 105, 30, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
-            z-index: -2;
-        }
-
-        .geometric-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(30deg, rgba(135, 169, 107, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(135, 169, 107, 0.03) 87.5%, rgba(135, 169, 107, 0.03) 100%),
-                linear-gradient(150deg, rgba(135, 169, 107, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(135, 169, 107, 0.03) 87.5%, rgba(135, 169, 107, 0.03) 100%),
-                linear-gradient(30deg, rgba(135, 169, 107, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(135, 169, 107, 0.03) 87.5%, rgba(135, 169, 107, 0.03) 100%),
-                linear-gradient(150deg, rgba(135, 169, 107, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(135, 169, 107, 0.03) 87.5%, rgba(135, 169, 107, 0.03) 100%),
-                linear-gradient(60deg, rgba(210, 105, 30, 0.04) 25%, transparent 25.5%, transparent 75%, rgba(210, 105, 30, 0.04) 75%, rgba(210, 105, 30, 0.04) 100%),
-                linear-gradient(60deg, rgba(210, 105, 30, 0.04) 25%, transparent 25.5%, transparent 75%, rgba(210, 105, 30, 0.04) 75%, rgba(210, 105, 30, 0.04) 100%);
-            background-size: 80px 140px;
-            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* ------------------------- */
-        /* --- CREATIVE NAVIGATION - */
-        /* ------------------------- */
-        .creative-nav {
-            position: fixed;
-            top: 50%;
-            right: 30px;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background: rgba(15, 26, 48, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 25px 15px;
-            border-radius: 50px;
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .nav-item {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            border: 1px solid transparent;
-        }
-
-        .nav-item.active {
-            background: var(--sage-green);
-            box-shadow: 0 0 15px rgba(135, 169, 107, 0.4);
-            transform: scale(1.1);
-        }
-
-        .nav-item:hover {
-            background: rgba(210, 105, 30, 0.2);
-            border-color: var(--terracotta);
-        }
-
-        .nav-icon {
-            font-size: 1.2rem;
-            color: var(--cream);
-        }
-
-        .nav-item.active .nav-icon {
-            color: var(--deep-navy);
-        }
-
-        .nav-tooltip {
-            position: absolute;
-            right: 60px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--sage-green);
-            color: var(--deep-navy);
-            padding: 8px 15px;
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .nav-item:hover .nav-tooltip {
-            opacity: 1;
-        }
-
-        /* ------------------------- */
-        /* --- PREMIUM PAGES ------ */
-        /* ------------------------- */
-        .premium-page {
-            min-height: 100vh;
-            padding: 100px 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-
-        .premium-page.hidden {
-            display: none;
-            opacity: 0;
-        }
-
-        .page-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* ------------------------- */
-        /* --- TYPOGRAPHY --------- */
-        /* ------------------------- */
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        h1 { 
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            color: var(--cream);
-            margin-bottom: var(--spacing-sm);
-            background: linear-gradient(135deg, var(--sage-green) 0%, var(--soft-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        h2 { 
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            color: var(--sage-green);
-            margin-bottom: var(--spacing-md);
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--terracotta);
-            border-radius: 2px;
-        }
-
-        h3 { 
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            color: var(--soft-gold);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        h4 { 
-            font-size: 1.3rem;
-            color: var(--cream);
-        }
-
-        p { 
-            color: rgba(245, 245, 220, 0.85);
-            margin-bottom: var(--spacing-sm);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .accent-text {
-            color: var(--sage-green);
-            font-weight: 500;
-        }
-
-        /* ------------------------- */
-        /* --- BUTTONS ------------ */
-        /* ------------------------- */
-        .elegant-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.2rem;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            font-family: var(--font-body);
-            transition: var(--transition);
-            border: none;
-            background: transparent;
-            color: var(--cream);
-            gap: 0.7rem;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--sage-green);
-            text-transform: none;
-            letter-spacing: 0.5px;
-        }
-
-        .elegant-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(135, 169, 107, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .elegant-btn:hover {
-            background: rgba(135, 169, 107, 0.1);
-            box-shadow: 0 5px 15px rgba(135, 169, 107, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .elegant-btn:hover::before {
-            left: 100%;
-        }
-
-        .elegant-btn.terracotta {
-            border-color: var(--terracotta);
-            color: var(--cream);
-        }
-
-        .elegant-btn.terracotta:hover {
-            background: rgba(210, 105, 30, 0.1);
-            box-shadow: 0 5px 15px rgba(210, 105, 30, 0.3);
-        }
-
-        /* ------------------------- */
-        /* --- HOME PAGE ---------- */
-        /* ------------------------- */
-        .home-hero {
-            text-align: left;
-            margin-bottom: var(--spacing-xl);
-            max-width: 800px;
-        }
-
-        .home-hero h1 {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .home-hero p {
-            font-size: 1.3rem;
-            margin: 0 0 var(--spacing-lg);
-            max-width: 600px;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-        }
-
-        .expertise-card {
-            background: rgba(15, 26, 48, 0.6);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-lg);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-        }
-
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sage-green), var(--terracotta));
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--sage-green);
-            box-shadow: var(--shadow-deep);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--sage-green);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        /* ------------------------- */
-        /* --- ABOUT PAGE --------- */
-        /* ------------------------- */
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            align-items: center;
-        }
-
-        .portrait-frame {
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-            border-radius: var(--border-radius-lg);
-            background: linear-gradient(135deg, var(--sage-green), var(--terracotta));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-deep);
-        }
-
-        .portrait-frame::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            background: var(--deep-navy);
-            border-radius: calc(var(--border-radius-lg) - 5px);
-            z-index: 1;
-        }
-
-        .portrait-icon {
-            font-size: 8rem;
-            color: rgba(245, 245, 220, 0.9);
-            z-index: 2;
-            position: relative;
-        }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-sm);
-            background: rgba(15, 26, 48, 0.6);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            transition: var(--transition);
-        }
-
-        .highlight-item:hover {
-            border-color: var(--sage-green);
-            transform: translateY(-5px);
-        }
-
-        .highlight-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--sage-green);
-            color: var(--deep-navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        /* ------------------------- */
-        /* --- SKILLS PAGE -------- */
-        /* ------------------------- */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .skill-category {
-            background: rgba(15, 26, 48, 0.6);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-lg);
-            transition: var(--transition);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sage-green), var(--terracotta));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s;
-        }
-
-        .skill-category:hover::before {
-            transform: scaleX(1);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            border-color: var(--sage-green);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .skill-icon {
-            font-size: 2.5rem;
-            color: var(--sage-green);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .skill-tags {
-            display: flex;
-            gap: var(--spacing-xs);
-            margin-top: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .skill-tags span {
-            background: rgba(135, 169, 107, 0.2);
-            color: var(--sage-green);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(135, 169, 107, 0.3);
-        }
-
-        /* ------------------------- */
-        /* --- PROJECTS PAGE ------ */
-        /* ------------------------- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .project-card {
-            background: rgba(15, 26, 48, 0.6);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sage-green), var(--terracotta));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s;
-        }
-
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--sage-green);
-            box-shadow: var(--shadow-deep);
-        }
-
-        .project-visual {
-            height: 200px;
-            background: linear-gradient(135deg, var(--sage-green), var(--terracotta));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-icon {
-            font-size: 4rem;
-            color: rgba(245, 245, 220, 0.9);
-        }
-
-        .project-content {
-            padding: var(--spacing-lg);
-        }
-
-        .project-tags {
-            display: flex;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .project-tags span {
-            background: rgba(135, 169, 107, 0.2);
-            color: var(--sage-green);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(135, 169, 107, 0.3);
-        }
-
-        /* ------------------------- */
-        /* --- CERTIFICATIONS PAGE - */
-        /* ------------------------- */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .cert-card {
-            background: rgba(15, 26, 48, 0.6);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-lg);
-            transition: var(--transition);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--sage-green), var(--terracotta));
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--sage-green);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .cert-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto var(--spacing-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(135, 169, 107, 0.1);
-            border-radius: 50%;
-            padding: 15px;
-            border: 1px solid rgba(135, 169, 107, 0.3);
-        }
-
-        .cert-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .cert-meta {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: auto;
-        }
-
-        .cert-date {
-            font-size: 0.875rem;
-            color: var(--sage-green);
-        }
-
-        /* ------------------------- */
-        /* --- CREDLY BADGE STYLING */
-        /* ------------------------- */
-        .credly-badge-container {
-            display: flex;
-            justify-content: center;
-            margin-top: var(--spacing-md);
-        }
-
-        .credly-badge-container iframe {
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* ------------------------- */
-        /* --- CONTACT PAGE ------- */
-        /* ------------------------- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .contact-card {
-            background: rgba(15, 26, 48, 0.6);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-md);
-            transition: var(--transition);
-            border: 1px solid rgba(135, 169, 107, 0.2);
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-sm);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--sage-green);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(135, 169, 107, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--sage-green);
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            transition: var(--transition);
-            border: 1px solid rgba(135, 169, 107, 0.3);
-        }
-
-        .contact-card:hover .contact-icon {
-            background: var(--sage-green);
-            color: var(--deep-navy);
-        }
-
-        .elegant-form {
-            background: rgba(15, 26, 48, 0.6);
-            border-radius: var(--border-radius-lg);
-            padding: 1px;
-            border: 1px solid rgba(135, 169, 107, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--sage-green);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            border: 1px solid rgba(135, 169, 107, 0.3);
-            border-radius: var(--border-radius);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: var(--transition);
-            background: rgba(15, 26, 48, 0.5);
-            color: var(--cream);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--sage-green);
-            box-shadow: 0 0 0 3px rgba(135, 169, 107, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        /* ------------------------- */
-        /* --- RESPONSIVE DESIGN -- */
-        /* ------------------------- */
-        @media (max-width: 992px) {
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-lg);
-            }
-
-            .portrait-frame {
-                order: -1;
-                max-width: 400px;
-                height: 400px;
-                margin: 0 auto;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-lg);
-            }
-
-            .creative-nav {
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .premium-page {
-                padding: 80px 20px;
-            }
-
-            .creative-nav {
-                display: none;
-            }
-
-            .about-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-container,
-            .projects-grid,
-            .certifications-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .elegant-btn {
-                width: 100%;
-                max-width: 280px;
-                margin-bottom: var(--spacing-sm);
-            }
-        }
-    </style>
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Cursor Follower -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+    
+    <!-- Preloader with Animation -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <svg class="preloader-logo" viewBox="0 0 100 100" width="80" height="80">
+                <circle cx="50" cy="50" r="45" stroke="url(#gradient)" stroke-width="4" fill="none" stroke-dasharray="283" stroke-dashoffset="283">
+                    <animate attributeName="stroke-dashoffset" from="283" to="0" dur="2s" fill="freeze"/>
+                </circle>
+                <text x="50" y="60" text-anchor="middle" font-size="32" font-weight="700" fill="currentColor">⚡</text>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4361EE" />
+                        <stop offset="100%" style="stop-color:#7C3AED" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="preloader-text">Initializing Secure Systems...</div>
+        </div>
+    </div>
 
-    <div class="elegant-bg"></div>
-    <div class="geometric-pattern"></div>
-
-    <!-- Creative Navigation -->
-    <nav class="creative-nav">
-        <div class="nav-item active" data-target="home">
-            <i class="fas fa-home nav-icon"></i>
-            <div class="nav-tooltip">Home</div>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo magnetic-btn" aria-label="Home">
+                    <span class="logo-text">🛡️ CAC</span>
+                    <span class="logo-subtitle">Cyber · AI · Cloud</span>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                    <li><a href="#certifications" class="nav-link" data-text="Certifications">Certifications</a></li>
+                    <li><a href="#work" class="nav-link" data-text="Projects">Projects</a></li>
+                    <li><a href="#lab" class="nav-link" data-text="Lab">Research Lab</a></li>
+                    <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <!-- Availability Pulse -->
+                    <div class="availability-badge" title="Currently available for consulting">
+                        <span class="availability-pulse"></span>
+                        <span class="availability-text">Open for Consulting</span>
+                    </div>
+                    
+                    <!-- Theme Toggle with Animation -->
+                    <button class="theme-toggle magnetic-btn" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="menu-bar"></span>
+                        <span class="menu-bar"></span>
+                        <span class="menu-bar"></span>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="nav-item" data-target="about">
-            <i class="fas fa-user nav-icon"></i>
-            <div class="nav-tooltip">About</div>
-        </div>
-        <div class="nav-item" data-target="skills">
-            <i class="fas fa-cogs nav-icon"></i>
-            <div class="nav-tooltip">Skills</div>
-        </div>
-        <div class="nav-item" data-target="projects">
-            <i class="fas fa-project-diagram nav-icon"></i>
-            <div class="nav-tooltip">Projects</div>
-        </div>
-        <div class="nav-item" data-target="certifications">
-            <i class="fas fa-award nav-icon"></i>
-            <div class="nav-tooltip">Credentials</div>
-        </div>
-        <div class="nav-item" data-target="contact">
-            <i class="fas fa-envelope nav-icon"></i>
-            <div class="nav-tooltip">Contact</div>
-        </div>
+        
+        <!-- Progress Bar -->
+        <div class="scroll-progress" id="scrollProgress"></div>
     </nav>
 
-    <!-- Premium Pages -->
-    <main id="premium-content">
-        <!-- Home Page -->
-        <section id="home" class="premium-page">
-            <div class="page-container">
-                <div class="home-hero">
-                    <h1>Bikram Tamang</h1>
-                    <h2>AI & Cloud Solutions Architect</h2>
-                    <p>Building intelligent, secure cloud-native systems with expertise in artificial intelligence, cybersecurity, and modern infrastructure.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="elegant-btn" data-target="projects">
-                            <i class="fas fa-rocket"></i>
-                            View Projects
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section with Mesh Gradient -->
+        <section id="home" class="hero">
+            <!-- Animated Mesh Background -->
+            <div class="hero-mesh-bg">
+                <canvas id="meshCanvas"></canvas>
+            </div>
+            
+            <!-- Floating Orbs -->
+            <div class="floating-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-reveal>
+                        <span class="badge-icon">🔐</span>
+                        <span class="scramble-text" data-value="AWS Certified | CEH | AI/ML Specialist">AWS Certified | CEH | AI/ML Specialist</span>
+                    </div>
+                    
+                    <h1 class="hero-title" data-reveal>
+                        <span class="title-line">Bikram Tamang</span>
+                        <span class="title-line gradient-text">Cyber-AI Cloud</span>
+                        <span class="title-line">Architect</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle" data-reveal>
+                        Engineering <span class="text-highlight">intelligent AI systems</span>, architecting 
+                        <span class="text-highlight">zero-trust security</span>, and building 
+                        <span class="text-highlight">enterprise-scale cloud infrastructure</span> on AWS.
+                    </p>
+                    
+                    <div class="hero-cta" data-reveal>
+                        <a href="#contact" class="btn btn-primary magnetic-btn btn-glow">
+                            <span class="btn-text">Start Consultation</span>
+                            <span class="btn-icon">→</span>
                         </a>
-                        <a href="#" class="elegant-btn terracotta" data-target="contact">
-                            <i class="fas fa-paper-plane"></i>
-                            Get In Touch
+                        <a href="#work" class="btn btn-secondary magnetic-btn">
+                            <span class="btn-text">View Projects</span>
+                            <span class="btn-icon">↓</span>
                         </a>
                     </div>
-                </div>
-
-                <div class="expertise-grid">
-                    <div class="expertise-card">
-                        <div class="card-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Artificial Intelligence</h3>
-                        <p>Developing intelligent systems using machine learning, computer vision, and natural language processing for real-world applications.</p>
-                    </div>
-                    <div class="expertise-card">
-                        <div class="card-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Cybersecurity</h3>
-                        <p>Architecting resilient security frameworks with threat intelligence, ethical hacking, and zero-trust architecture principles.</p>
-                    </div>
-                    <div class="expertise-card">
-                        <div class="card-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud Infrastructure</h3>
-                        <p>Engineering scalable cloud-native solutions with Docker, Kubernetes, Terraform, and AWS for enterprise-grade applications.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Page -->
-        <section id="about" class="premium-page hidden">
-            <div class="page-container">
-                <div class="about-container">
-                    <div class="about-content">
-                        <h2>Professional Journey</h2>
-                        <p>I specialize in creating solutions where artificial intelligence, cybersecurity, and cloud infrastructure converge to build resilient, scalable systems. My approach combines deep technical expertise with strategic thinking to solve complex challenges in today's digital landscape.</p>
-                        <p>With expertise spanning AI development, security protocols, and cloud-native architecture, I engineer solutions that transform how organizations approach digital transformation and security.</p>
-                        <div class="about-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-lightbulb"></i>
-                                </div>
-                                <div>
-                                    <h4>Innovative Solutions</h4>
-                                    <p>Creating cutting-edge technology implementations</p>
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div>
-                                    <h4>Strategic Growth</h4>
-                                    <p>Focusing on scalable and sustainable architectures</p>
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div>
-                                    <h4>Collaborative Approach</h4>
-                                    <p>Working closely with teams to deliver excellence</p>
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <div>
-                                    <h4>Rapid Execution</h4>
-                                    <p>Delivering robust solutions with speed and precision</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <div class="portrait-frame">
-                            <div class="portrait-icon" >  
-                                <i class="fas fa-user-tie"></i>
-                            </div>
+                    
+                    <!-- Tech Stack Ticker -->
+                    <div class="tech-ticker" data-reveal>
+                        <div class="ticker-track">
+                            <div class="ticker-item">TensorFlow</div>
+                            <div class="ticker-item">PyTorch</div>
+                            <div class="ticker-item">AWS SageMaker</div>
+                            <div class="ticker-item">Kubernetes</div>
+                            <div class="ticker-item">Burp Suite</div>
+                            <div class="ticker-item">Metasploit</div>
+                            <div class="ticker-item">Terraform</div>
+                            <div class="ticker-item">Lambda</div>
+                            <div class="ticker-item">Docker</div>
+                            <div class="ticker-item">Neural Networks</div>
+                            <div class="ticker-item">Penetration Testing</div>
+                            <div class="ticker-item">CloudFormation</div>
+                            <!-- Duplicate for seamless loop -->
+                            <div class="ticker-item">TensorFlow</div>
+                            <div class="ticker-item">PyTorch</div>
+                            <div class="ticker-item">AWS SageMaker</div>
+                            <div class="ticker-item">Kubernetes</div>
+                            <div class="ticker-item">Burp Suite</div>
+                            <div class="ticker-item">Metasploit</div>
+                            <div class="ticker-item">Terraform</div>
+                            <div class="ticker-item">Lambda</div>
+                            <div class="ticker-item">Docker</div>
+                            <div class="ticker-item">Neural Networks</div>
+                            <div class="ticker-item">Penetration Testing</div>
+                            <div class="ticker-item">CloudFormation</div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
         </section>
 
-        <!-- Skills Page -->
-        <section id="skills" class="premium-page hidden">
-            <div class="page-container">
-                <h2>Technical Expertise</h2>
-                <p>Comprehensive skills across modern technology stacks and methodologies</p>
+        <!-- About Section with Bento Grid -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">About Me</span>
+                    <h2 class="section-title">Transforming Security & Intelligence<br><span class="gradient-text">Through Code</span></h2>
+                </div>
                 
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI & Machine Learning</h3>
-                        <p>Deep Learning, Computer Vision, NLP, Predictive Analytics, Neural Architecture</p>
-                        <div class="skill-tags">
-                            <span>TensorFlow</span>
-                            <span>PyTorch</span>
-                            <span>Keras</span>
-                            <span>OpenCV</span>
-                            <span>Scikit-learn</span>
-                            <span>NLTK</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Cybersecurity</h3>
-                        <p>Ethical Hacking, Threat Intelligence, Zero Trust, Security Protocols, Penetration Testing</p>
-                        <div class="skill-tags">
-                            <span>CEH</span>
-                            <span>Kali Linux</span>
-                            <span>Metasploit</span>
-                            <span>Wireshark</span>
-                            <span>Nmap</span>
-                            <span>Burp Suite</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                        <p>AWS, Docker, Kubernetes, Terraform, CI/CD, Microservices, Serverless Architecture</p>
-                        <div class="skill-tags">
-                            <span>AWS</span>
-                            <span>Docker</span>
-                            <span>Kubernetes</span>
-                            <span>Terraform</span>
-                            <span>Jenkins</span>
-                            <span>GitLab CI</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data & Analytics</h3>
-                        <p>Kafka, Spark, Data Pipelines, Real-time Processing, Event-Driven Architecture</p>
-                        <div class="skill-tags">
-                            <span>Kafka</span>
-                            <span>Spark</span>
-                            <span>Airflow</span>
-                            <span>Redis</span>
-                            <span>MongoDB</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Programming Languages</h3>
-                        <p>Python, JavaScript, Java, Go, SQL, Bash Scripting, Infrastructure as Code</p>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>Java</span>
-                            <span>Go</span>
-                            <span>SQL</span>
-                            <span>Bash</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>Infrastructure & Networking</h3>
-                        <p>VPC, Load Balancing, DNS, CDN, Firewalls, VPN, Network Security</p>
-                        <div class="skill-tags">
-                            <span>AWS VPC</span>
-                            <span>Load Balancers</span>
-                            <span>Route 53</span>
-                            <span>CloudFront</span>
-                            <span>Security Groups</span>
-                            <span>VPN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Page -->
-        <section id="projects" class="premium-page hidden">
-            <div class="page-container">
-                <h2>Featured Projects</h2>
-                <p>Selected implementations showcasing technical expertise and innovation</p>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-chart-network"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>AI</span>
-                                <span>Docker</span>
-                                <span>Security</span>
-                            </div>
-                            <h3>Intelligent Threat Detection</h3>
-                            <p>Advanced threat detection system using machine learning and containerization to predict and neutralize cyber threats in real-time.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/v-Krama/Portfolio/blob/main/SVC-Stocker-sentiment-analysis/Stock-sentiments.ipynb" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
+                <!-- Bento Grid Layout -->
+                <div class="bento-grid">
+                    <!-- Large card - Profile -->
+                    <div class="bento-card bento-large glass-card" data-reveal>
+                        <div class="bento-content">
+                            <h3 class="bento-title">Elite Technical Specialist 🚀</h3>
+                            <p class="bento-text">
+                                With <strong>10+ years</strong> of advanced experience spanning AI/ML engineering, offensive cybersecurity, 
+                                and cloud-native architecture, I architect <strong>intelligent, secure, and scalable systems</strong> that 
+                                power mission-critical applications.
+                            </p>
+                            <p class="bento-text">
+                                My expertise bridges <strong>deep learning models</strong>, <strong>advanced penetration testing</strong>, 
+                                and <strong>AWS Well-Architected frameworks</strong> to deliver solutions that are not only innovative—they're 
+                                <strong>production-grade and battle-tested</strong>.
+                            </p>
+                            <div class="bento-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value" data-count="200">0</div>
+                                    <div class="stat-label">Projects</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" data-count="85">0</div>
+                                    <div class="stat-label">Enterprises</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" data-count="25">0</div>
+                                    <div class="stat-label">Certifications</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>Computer Vision</span>
-                                <span>Kafka</span>
-                                <span>AWS</span>
-                            </div>
-                            <h3>Real-time Visual Intelligence</h3>
-                            <p>Convolutional Neural Network with streaming architecture for real-time image classification deployed on AWS with auto-scaling.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/v-Krama/v-Krama/blob/main/dl-cifar_image_classification_CNN/cifar_image_classification.ipynb" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
+                    
+                    <!-- Medium card - Skills Radar -->
+                    <div class="bento-card bento-medium glass-card" data-reveal>
+                        <div class="bento-content">
+                            <h3 class="bento-title">Core Expertise</h3>
+                            <div class="skills-radar-wrapper">
+                                <canvas id="skillsRadar" width="300" height="300"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
+                    
+                    <!-- Small card - Location -->
+                    <div class="bento-card bento-small glass-card bento-accent" data-reveal>
+                        <div class="bento-icon">🌐</div>
+                        <div class="bento-content">
+                            <h4 class="bento-subtitle">Remote</h4>
+                            <p class="bento-value">Global Consulting</p>
                         </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>Terraform</span>
-                                <span>Kubernetes</span>
-                                <span>Data Pipeline</span>
-                            </div>
-                            <h3>Cloud Data Intelligence Platform</h3>
-                            <p>Automated data pipeline with infrastructure as code, container orchestration, and real-time analytics for business intelligence.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/v-Krama/v-Krama/blob/main/webScraping/Scraping-merolagani.ipynb" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
+                    </div>
+                    
+                    <!-- Small card - Experience -->
+                    <div class="bento-card bento-small glass-card bento-gradient" data-reveal>
+                        <div class="bento-icon">💼</div>
+                        <div class="bento-content">
+                            <h4 class="bento-subtitle">Experience</h4>
+                            <p class="bento-value">10+ Years</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Wide card - Tools -->
+                    <div class="bento-card bento-wide glass-card" data-reveal>
+                        <div class="bento-content">
+                            <h3 class="bento-title">Technology Arsenal</h3>
+                            <div class="tool-tags">
+                                <span class="tool-tag">TensorFlow</span>
+                                <span class="tool-tag">PyTorch</span>
+                                <span class="tool-tag">AWS SageMaker</span>
+                                <span class="tool-tag">Kubernetes</span>
+                                <span class="tool-tag">Burp Suite Pro</span>
+                                <span class="tool-tag">Metasploit</span>
+                                <span class="tool-tag">Terraform</span>
+                                <span class="tool-tag">AWS Lambda</span>
+                                <span class="tool-tag">Docker</span>
+                                <span class="tool-tag">Nmap</span>
+                                <span class="tool-tag">Wireshark</span>
+                                <span class="tool-tag">CloudFormation</span>
+                                <span class="tool-tag">Scikit-learn</span>
+                                <span class="tool-tag">Kali Linux</span>
+                                <span class="tool-tag">EC2</span>
+                                <span class="tool-tag">S3</span>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>Cybersecurity</span>
-                                <span>Python</span>
-                                <span>Network Security</span>
-                            </div>
-                            <h3>Vulnerability Assessment Tool</h3>
-                            <p>Custom security scanning tool that identifies vulnerabilities in network infrastructure and web applications with detailed reporting.</p>
-                            <div class="project-links">
-                                <a href="#" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>NLP</span>
-                                <span>Python</span>
-                                <span>API</span>
-                            </div>
-                            <h3>Intelligent Chatbot System</h3>
-                            <p>Natural language processing chatbot with sentiment analysis and context awareness for customer service automation.</p>
-                            <div class="project-links">
-                                <a href="#" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-visual">
-                            <div class="project-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tags">
-                                <span>Kubernetes</span>
-                                <span>Monitoring</span>
-                                <span>Automation</span>
-                            </div>
-                            <h3>Kubernetes Cluster Management</h3>
-                            <p>Automated Kubernetes cluster deployment with monitoring, logging, and auto-scaling capabilities for production environments.</p>
-                            <div class="project-links">
-                                <a href="#" class="elegant-btn">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
+                    
+                    <!-- Small card - Status -->
+                    <div class="bento-card bento-small glass-card bento-success" data-reveal>
+                        <div class="bento-icon">⚡</div>
+                        <div class="bento-content">
+                            <h4 class="bento-subtitle">Status</h4>
+                            <p class="bento-value">Available</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications Page -->
-        <section id="certifications" class="premium-page hidden">
-            <div class="page-container">
-                <h2>Professional Credentials</h2>
-                <p>Verified expertise in cutting-edge technologies and methodologies</p>
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Verified Credentials</span>
+                    <h2 class="section-title">Professional <span class="gradient-text">Certifications</span></h2>
+                    <p class="section-description">Industry-recognized certifications validating expertise in cloud architecture, cybersecurity, and artificial intelligence.</p>
+                </div>
                 
                 <div class="certifications-grid">
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <img src="aii.png" alt="AI Engineering Certificate">
+                    <!-- AWS Solutions Architect - Featured with Credly Badge -->
+                    <div class="cert-card featured-cert glass-card" data-reveal>
+                        <div class="cert-badge-wrapper">
+                            <div data-iframe-width="200" data-iframe-height="270" data-share-badge-id="875eb788-b18b-4302-98cd-96cead961d5c" data-share-badge-host="https://www.credly.com"></div>
+                            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
                         </div>
-                        <h3>AI Engineering</h3>
-                        <p>Advanced training in neural networks, machine learning, computer vision, and data analysis for intelligent systems development.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: July 2023</span>
-                            <a href="AI.pdf" target="_blank" class="elegant-btn">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <img src="CEHH.png" alt="Ethical Hacking Certificate">
-                        </div>
-                        <h3>Cybersecurity Defense</h3>
-                        <p>Advanced training in ethical hacking, network security, penetration testing, and defensive cybersecurity strategies.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: February 2025</span>
-                            <a href="CEH.pdf" target="_blank" class="elegant-btn">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <img src="aws-certified-solutions-architect-associate.png" alt="AWS Solutions Architect Certificate">
-                        </div>
-                        <h3>AWS Cloud Solutions Architect</h3>
-                        <p>Certified in designing secure, scalable AWS cloud architectures for enterprise applications and AI deployments.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: February 2025</span>
-                            <a href="aws.pdf" target="_blank" class="elegant-btn">View Credential</a>
-                        </div>
-                        <div class="credly-badge-container">
-                            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="875eb788-b18b-4302-98cd-96cead961d5c" data-share-badge-host="https://www.credly.com"></div>
+                        <div class="cert-content">
+                            <div class="cert-issuer">
+                                <img src="imgs/aws-cert-badge.png" alt="AWS Certification" class="cert-logo" loading="lazy">
+                                <span class="issuer-name">Amazon Web Services</span>
+                            </div>
+                            <h3 class="cert-title">AWS Certified Solutions Architect</h3>
+                            <span class="cert-level">Associate</span>
+                            <p class="cert-description">Validates expertise in designing and deploying scalable, highly available, and fault-tolerant systems on AWS.</p>
+                            <div class="cert-details">
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Training</span>
+                                    <span class="detail-value">90 Hours</span>
+                                </div>
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Completed</span>
+                                    <span class="detail-value">Oct 2024</span>
+                                </div>
+                            </div>
+                            <a href="https://www.credly.com/badges/875eb788-b18b-4302-98cd-96cead961d5c/public_url" target="_blank" rel="noopener noreferrer" class="cert-verify-btn magnetic-btn">
+                                <span>Verify on Credly</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <i class="fas fa-docker" style="font-size: 2.5rem; color: var(--sage-green);"></i>
-                        </div>
-                        <h3>Docker Certified Associate</h3>
-                        <p>Validated expertise in containerization, Docker architecture, and container orchestration for modern application deployment.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: January 2024</span>
-                            <a href="#" class="elegant-btn">View Credential</a>
+                    
+                    <!-- Certified Ethical Hacker -->
+                    <div class="cert-card glass-card" data-reveal>
+                        <div class="cert-icon">🔐</div>
+                        <div class="cert-content">
+                            <div class="cert-issuer">
+                                <span class="issuer-name">Broadway Infosys</span>
+                            </div>
+                            <h3 class="cert-title">Certified Ethical Hacker</h3>
+                            <span class="cert-level">Professional Training</span>
+                            <p class="cert-description">Comprehensive training in offensive security, penetration testing methodologies, and vulnerability assessment techniques.</p>
+                            <div class="cert-details">
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Training</span>
+                                    <span class="detail-value">90 Hours</span>
+                                </div>
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">Aug - Oct 2024</span>
+                                </div>
+                            </div>
+                            <a href="https://verify.broadwayinfosys.com" target="_blank" rel="noopener noreferrer" class="cert-verify-btn magnetic-btn">
+                                <span>Verify Certificate</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <i class="fas fa-kubernetes" style="font-size: 2.5rem; color: var(--sage-green);"></i>
-                        </div>
-                        <h3>Kubernetes Administrator</h3>
-                        <p>Certification demonstrating proficiency in Kubernetes cluster management, deployment, and troubleshooting.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: March 2024</span>
-                            <a href="#" class="elegant-btn">View Credential</a>
+                    
+                    <!-- Python with AI/ML -->
+                    <div class="cert-card glass-card" data-reveal>
+                        <div class="cert-icon">🧠</div>
+                        <div class="cert-content">
+                            <div class="cert-issuer">
+                                <span class="issuer-name">Broadway Infosys</span>
+                            </div>
+                            <h3 class="cert-title">Python with Artificial Intelligence</h3>
+                            <span class="cert-level">Professional Training</span>
+                            <p class="cert-description">Intensive program covering machine learning algorithms, deep learning frameworks, neural networks, and AI application development.</p>
+                            <div class="cert-details">
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Training</span>
+                                    <span class="detail-value">180 Hours</span>
+                                </div>
+                                <div class="cert-detail-item">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">Jan - May 2023</span>
+                                </div>
+                            </div>
+                            <a href="https://verify.broadwayinfosys.com" target="_blank" rel="noopener noreferrer" class="cert-verify-btn magnetic-btn">
+                                <span>Verify Certificate</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="cert-card">
-                        <div class="cert-logo">
-                            <i class="fas fa-terraform" style="font-size: 2.5rem; color: var(--sage-green);"></i>
+                </div>
+                
+                <!-- Certification Summary -->
+                <div class="cert-summary glass-card" data-reveal>
+                    <div class="summary-item">
+                        <div class="summary-icon">📜</div>
+                        <div class="summary-content">
+                            <div class="summary-value">360+</div>
+                            <div class="summary-label">Training Hours Completed</div>
                         </div>
-                        <h3>Terraform Associate</h3>
-                        <p>Certified in infrastructure as code principles and Terraform for automating cloud resource provisioning and management.</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Issued: November 2023</span>
-                            <a href="#" class="elegant-btn">View Credential</a>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">✅</div>
+                        <div class="summary-content">
+                            <div class="summary-value">3</div>
+                            <div class="summary-label">Professional Certifications</div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🎯</div>
+                        <div class="summary-content">
+                            <div class="summary-value">100%</div>
+                            <div class="summary-label">Verified & Authenticated</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Page -->
-        <section id="contact" class="premium-page hidden">
-            <div class="page-container">
-                <h2>Get In Touch</h2>
-                <p>Let's discuss how we can collaborate on your next project</p>
+        <!-- Projects Section with Modern Grid -->
+        <section id="work" class="section section-alt">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Portfolio</span>
+                    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                </div>
                 
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>bikramtamang293@gmail.com</p>
+                <!-- Project Filters with Pill Design -->
+                <div class="project-filters" data-reveal>
+                    <button class="filter-pill active magnetic-btn" data-filter="all">
+                        <span>All Projects</span>
+                        <span class="pill-count">9</span>
+                    </button>
+                    <button class="filter-pill magnetic-btn" data-filter="ai">
+                        <span>AI/ML</span>
+                        <span class="pill-count">3</span>
+                    </button>
+                    <button class="filter-pill magnetic-btn" data-filter="security">
+                        <span>Cybersecurity</span>
+                        <span class="pill-count">3</span>
+                    </button>
+                    <button class="filter-pill magnetic-btn" data-filter="cloud">
+                        <span>AWS Cloud</span>
+                        <span class="pill-count">3</span>
+                    </button>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="projects-grid-modern">
+                    <!-- AI Project 1 -->
+                    <article class="project-card-modern glass-card" data-category="ai" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project1_8.png" alt="Neural Network Vision System" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AI/ML</span>
+                                <span class="project-year">2024</span>
                             </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <p>+977 9813464612</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Kathmandu, Nepal</p>
+                            <h3 class="project-title-modern">Computer Vision AI Platform</h3>
+                            <p class="project-description-modern">
+                                Real-time object detection system using YOLOv8 and TensorFlow, achieving 98.7% accuracy with edge deployment on AWS IoT Greengrass.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">AWS SageMaker</span>
+                                <span class="tech-badge">CUDA</span>
                             </div>
                         </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                    </article>
+
+                    <!-- Security Project 1 -->
+                    <article class="project-card-modern glass-card" data-category="security" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project2_1.jpg" alt="Advanced Penetration Testing Framework" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
                             </div>
-                            <div class="contact-details">
-                                <h4>Availability</h4>
-                                <p>Open for new projects and collaborations</p>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">Security</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title-modern">Zero-Trust Network Scanner</h3>
+                            <p class="project-description-modern">
+                                Custom penetration testing toolkit integrating Burp Suite APIs, automated vulnerability scanning, and AI-powered threat intelligence.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Metasploit</span>
+                                <span class="tech-badge">Burp Suite</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Cloud Project 1 -->
+                    <article class="project-card-modern glass-card" data-category="cloud" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project3_4.jpg" alt="Serverless Cloud Architecture" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AWS Cloud</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title-modern">Multi-Region Serverless API</h3>
+                            <p class="project-description-modern">
+                                Enterprise-grade serverless architecture on AWS Lambda with API Gateway, DynamoDB global tables, and CloudFront CDN for <50ms latency.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">AWS Lambda</span>
+                                <span class="tech-badge">DynamoDB</span>
+                                <span class="tech-badge">Terraform</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AI Project 2 -->
+                    <article class="project-card-modern glass-card" data-category="ai" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project4_2.png" alt="NLP Sentiment Analysis" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AI/ML</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title-modern">Transformer-Based NLP Engine</h3>
+                            <p class="project-description-modern">
+                                Advanced natural language processing system using BERT and GPT architectures for real-time sentiment analysis and entity recognition.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Transformers</span>
+                                <span class="tech-badge">HuggingFace</span>
+                                <span class="tech-badge">TensorFlow</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Security Project 2 -->
+                    <article class="project-card-modern glass-card" data-category="security" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project5_4.jpg" alt="SIEM Threat Intelligence" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">Security</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title-modern">AI-Powered SIEM Platform</h3>
+                            <p class="project-description-modern">
+                                Machine learning-enhanced security information and event management system with real-time threat detection and automated incident response.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">ELK Stack</span>
+                                <span class="tech-badge">Splunk</span>
+                                <span class="tech-badge">ML Algorithms</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Cloud Project 2 -->
+                    <article class="project-card-modern glass-card" data-category="cloud" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project1_0.png" alt="Kubernetes Microservices" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AWS Cloud</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title-modern">EKS Multi-Cluster Platform</h3>
+                            <p class="project-description-modern">
+                                Production-grade Kubernetes infrastructure on AWS EKS with Istio service mesh, automated CI/CD pipelines, and advanced observability.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">Kubernetes</span>
+                                <span class="tech-badge">EKS</span>
+                                <span class="tech-badge">Istio</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AI Project 3 -->
+                    <article class="project-card-modern glass-card" data-category="ai" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project1_8.png" alt="Reinforcement Learning" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AI/ML</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title-modern">Deep RL Trading System</h3>
+                            <p class="project-description-modern">
+                                Reinforcement learning-based algorithmic trading platform using deep Q-networks and policy gradient methods for financial markets.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">OpenAI Gym</span>
+                                <span class="tech-badge">Ray RLlib</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Security Project 3 -->
+                    <article class="project-card-modern glass-card" data-category="security" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project2_1.jpg" alt="DevSecOps Pipeline" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">Security</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title-modern">Automated DevSecOps Pipeline</h3>
+                            <p class="project-description-modern">
+                                Comprehensive security-first CI/CD pipeline with SAST, DAST, container scanning, and automated compliance checks integrated into GitHub Actions.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">GitHub Actions</span>
+                                <span class="tech-badge">SonarQube</span>
+                                <span class="tech-badge">Trivy</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Cloud Project 3 -->
+                    <article class="project-card-modern glass-card" data-category="cloud" data-reveal>
+                        <div class="project-image-wrapper">
+                            <img src="imgs/project3_4.jpg" alt="Infrastructure as Code" loading="lazy">
+                            <div class="project-overlay-modern">
+                                <a href="#" class="project-view-btn magnetic-btn">
+                                    <span>View Project</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-modern">
+                                <span class="project-category-tag">AWS Cloud</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title-modern">Multi-Account AWS Landing Zone</h3>
+                            <p class="project-description-modern">
+                                Enterprise AWS Control Tower implementation with automated account provisioning, centralized logging, and security guardrails using Terraform.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-badge">AWS Control Tower</span>
+                                <span class="tech-badge">Terraform</span>
+                                <span class="tech-badge">AWS Organizations</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creative Lab Section -->
+        <section id="lab" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Research Lab</span>
+                    <h2 class="section-title">Cutting-Edge <span class="gradient-text">Experiments</span></h2>
+                    <p class="section-description">Pushing boundaries in AI, security research, and cloud innovation</p>
+                </div>
+                
+                <div class="lab-grid">
+                    <!-- Lab Item 1 -->
+                    <div class="lab-card glass-card" data-reveal>
+                        <div class="lab-icon">🧠</div>
+                        <h3 class="lab-title">Neural Architecture Search</h3>
+                        <p class="lab-description">Experimenting with AutoML and neural architecture search (NAS) to automatically design optimal deep learning models.</p>
+                        <a href="#" class="lab-link">Explore Research →</a>
+                    </div>
+                    
+                    <!-- Lab Item 2 -->
+                    <div class="lab-card glass-card" data-reveal>
+                        <div class="lab-icon">🔐</div>
+                        <h3 class="lab-title">Quantum-Safe Cryptography</h3>
+                        <p class="lab-description">Developing post-quantum cryptographic systems and lattice-based encryption for future-proof security.</p>
+                        <a href="#" class="lab-link">Explore Research →</a>
+                    </div>
+                    
+                    <!-- Lab Item 3 -->
+                    <div class="lab-card glass-card" data-reveal>
+                        <div class="lab-icon">☁️</div>
+                        <h3 class="lab-title">Edge AI on AWS Wavelength</h3>
+                        <p class="lab-description">Building ultra-low latency ML inference at the edge using AWS Wavelength and 5G integration.</p>
+                        <a href="#" class="lab-link">Explore Research →</a>
+                    </div>
+                    
+                    <!-- Lab Item 4 -->
+                    <div class="lab-card glass-card" data-reveal>
+                        <div class="lab-icon">🛡️</div>
+                        <h3 class="lab-title">AI-Driven Threat Hunting</h3>
+                        <p class="lab-description">Leveraging machine learning for proactive threat detection, behavior analysis, and advanced persistent threat (APT) identification.</p>
+                        <a href="#" class="lab-link">Explore Research →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section section-alt">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="section-title">Client <span class="gradient-text">Success Stories</span></h2>
+                </div>
+                
+                <div class="testimonials-carousel" id="testimonialsCarousel" data-reveal>
+                    <div class="testimonials-track">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card-modern glass-card">
+                            <div class="stars-rating">★★★★★</div>
+                            <p class="testimonial-quote">
+                                "Exceptional expertise in AI and cloud architecture. The ML model deployed on AWS SageMaker 
+                                reduced our inference costs by 70% while improving accuracy to 99.2%. World-class engineering!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JR</div>
+                                <div class="author-details">
+                                    <h4 class="author-name">Dr. James Richardson</h4>
+                                    <p class="author-role">CTO, QuantumAI Labs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card-modern glass-card">
+                            <div class="stars-rating">★★★★★</div>
+                            <p class="testimonial-quote">
+                                "Their penetration testing uncovered critical vulnerabilities we didn't know existed. The security 
+                                hardening and zero-trust implementation has made our infrastructure bulletproof. Highly recommended!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">SK</div>
+                                <div class="author-details">
+                                    <h4 class="author-name">Sarah Kimura</h4>
+                                    <p class="author-role">CISO, SecureBank Global</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card-modern glass-card">
+                            <div class="stars-rating">★★★★★</div>
+                            <p class="testimonial-quote">
+                                "The multi-region AWS architecture they designed handles 10M+ requests/day with 99.99% uptime. 
+                                Serverless infrastructure cut our costs by 60%. Simply outstanding technical leadership!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MP</div>
+                                <div class="author-details">
+                                    <h4 class="author-name">Marcus Park</h4>
+                                    <p class="author-role">VP Engineering, CloudScale Inc</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="elegant-form">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeg90Kj9-eX7zMwpu1zEfWijmXpNY9kNfTt1gw29E0jpr3WXQ/viewform?embedded=true" width="650" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>>
-                        <!-- <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyfOm2QsnSfBHgx7zJC1S7KEg0mAqurAo1FYRUO6kPa7kpV-iswzYr0tN0Vt3xu91g1/exec" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Project discussion" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project or proposal..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="elegant-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
+                    
+                    <!-- Carousel Controls -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn magnetic-btn" aria-label="Previous">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
                         </button>
+                        <div class="carousel-dots"></div>
+                        <button class="carousel-btn next-btn magnetic-btn" aria-label="Next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        Inline status message -->
-                        <!-- <p id="formStatus" style="color: green; display: none; margin-top: 10px;"></p>
-                        </form> -->
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="section-title">Let's Build <span class="gradient-text">Something Extraordinary</span></h2>
+                    <p class="section-description">Ready to discuss your AI, security, or cloud project? Let's connect.</p>
+                </div>
+                
+                <div class="contact-layout">
+                    <!-- Contact Info -->
+                    <div class="contact-sidebar" data-reveal>
+                        <div class="contact-card glass-card">
+                            <h3 class="contact-card-title">Start a Conversation</h3>
+                            <p class="contact-card-text">
+                                Whether you need cutting-edge AI/ML solutions, advanced security audits, or enterprise 
+                                cloud architecture—I'm here to transform your vision into production-grade reality.
+                            </p>
+                            
+                            <div class="contact-methods">
+                                <a href="mailto:contact@elite-cyber-ai.cloud" class="contact-method-item magnetic-btn">
+                                    <div class="method-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-label">Email</span>
+                                        <span class="method-value">contact@elite-cyber-ai.cloud</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://linkedin.com" class="contact-method-item magnetic-btn">
+                                    <div class="method-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-label">LinkedIn</span>
+                                        <span class="method-value">Connect with me</span>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="social-links-modern">
+                                <a href="#" class="social-btn magnetic-btn" aria-label="LinkedIn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-btn magnetic-btn" aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-btn magnetic-btn" aria-label="Twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Forms Embed -->
+                    <div class="contact-form-wrapper glass-card" data-reveal>
+                        <h3 class="form-title">Send a Message</h3>
+                        <div class="google-form-container">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeg90Kj9-eX7zMwpu1zEfWijmXpNY9kNfTt1gw29E0jpr3WXQ/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- PREMIUM NAVIGATION SYSTEM ---
-            const pages = document.querySelectorAll('.premium-page');
-            const navItems = document.querySelectorAll('.nav-item');
-
-            // Function to show a specific page
-            function showPage(pageId) {
-                // Hide all pages
-                pages.forEach(page => {
-                    page.classList.add('hidden');
-                });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">🛡️ CAC</div>
+                    <p class="footer-tagline">Elite AI Engineering · Advanced Cybersecurity · Cloud Architecture</p>
+                    <p class="footer-copyright">© 2025 MiniMax Agent. All rights reserved.</p>
+                </div>
                 
-                // Show the selected page
-                const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.remove('hidden');
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Navigation</h4>
+                        <ul class="footer-list">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#work">Projects</a></li>
+                            <li><a href="#lab">Research Lab</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
                     
-                    // Update URL without reloading
-                    history.pushState(null, '', `#${pageId}`);
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
                     
-                    // Update active nav item
-                    navItems.forEach(item => {
-                        item.classList.remove('active');
-                        if (item.getAttribute('data-target') === pageId) {
-                            item.classList.add('active');
-                        }
-                    });
-                    
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-                }
-            }
-            
-            // Navigation via items
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const pageId = item.getAttribute('data-target');
-                    showPage(pageId);
-                });
-            });
-            
-            // Button navigation
-            document.querySelectorAll('[data-target]').forEach(button => {
-                if (button.classList.contains('nav-item')) return;
-                
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const pageId = button.getAttribute('data-target');
-                    showPage(pageId);
-                });
-            });
-            
-            // Handle browser back/forward buttons
-            window.addEventListener('popstate', () => {
-                const hash = window.location.hash.substring(1) || 'home';
-                showPage(hash);
-            });
-            
-            // Check initial URL hash
-            const initialHash = window.location.hash.substring(1);
-            if (initialHash) {
-                showPage(initialHash);
-            } else {
-                showPage('home');
-            }
-            
-            //FORM HANDLING
-            const contactForm = document.getElementById('contactForm');
-            const formStatus = document.getElementById('formStatus');
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Legal</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top magnetic-btn" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
 
-            contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(contactForm);
-            const payload = new URLSearchParams(formData);
-            const name = formData.get('name') || "there";
-
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = "Sending...";
-
-            // Hide previous status message
-            formStatus.style.display = 'none';
-
-            try {
-                const response = await fetch(contactForm.action, {
-                method: "POST",
-                body: payload,
-                headers: { 'Accept': 'application/json' }
-                });
-
-                let data;
-                try {
-                data = await response.json();
-                } catch {
-                data = { result: 'success' }; // fallback
-                }
-
-                if (data.result === 'success') {
-                formStatus.style.color = 'green';
-                formStatus.textContent = `Thank you, ${name}! Your message has been sent.`;
-                formStatus.style.display = 'block';
-                contactForm.reset(); // optional: keep if you want fields cleared
-                } else {
-                formStatus.style.color = 'red';
-                formStatus.textContent = "Failed to send message. Please try again later.";
-                formStatus.style.display = 'block';
-                }
-            } catch (error) {
-                console.error(error);
-                formStatus.style.color = 'red';
-                formStatus.textContent = "Error sending message. Please try again later.";
-                formStatus.style.display = 'block';
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = "Send Message";
-            }
-            });
-
-            
-            // Add subtle animation to cards on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all cards for animation
-            document.querySelectorAll('.expertise-card, .skill-category, .project-card, .cert-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
-    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
