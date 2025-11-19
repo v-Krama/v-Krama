@@ -69,7 +69,14 @@ function initPreloader() {
 // ===================================
 
 function initCursor() {
-    if (state.isTouch) return;
+    if (state.isTouch) {
+        // Hide cursor elements on touch devices
+        const cursorDot = document.querySelector('[data-cursor-dot]');
+        const cursorOutline = document.querySelector('[data-cursor-outline]');
+        if (cursorDot) cursorDot.style.display = 'none';
+        if (cursorOutline) cursorOutline.style.display = 'none';
+        return;
+    }
     
     const cursorDot = document.querySelector('[data-cursor-dot]');
     const cursorOutline = document.querySelector('[data-cursor-outline]');
@@ -263,17 +270,20 @@ function initMeshBackground() {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
     
+    // Reduce particle count on mobile for better performance
+    const isMobile = window.innerWidth <= 768 || state.isTouch;
+    const particleCount = isMobile ? 20 : 50;
+    
     // Particles
     const particles = [];
-    const particleCount = 50;
     
     class Particle {
         constructor() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 3 + 1;
+            this.vx = (Math.random() - 0.5) * (isMobile ? 0.3 : 0.5);
+            this.vy = (Math.random() - 0.5) * (isMobile ? 0.3 : 0.5);
+            this.size = Math.random() * (isMobile ? 2 : 3) + 1;
         }
         
         update() {
@@ -297,8 +307,21 @@ function initMeshBackground() {
         particles.push(new Particle());
     }
     
-    // Animation loop
-    function animate() {
+    // Animation loop with performance optimization
+    let animationId;
+    let lastTime = 0;
+    
+    function animate(currentTime) {
+        // Limit to 30fps on mobile for battery saving
+        const targetFrameTime = isMobile ? 1000 / 30 : 1000 / 60;
+        
+        if (currentTime - lastTime < targetFrameTime) {
+            animationId = requestAnimationFrame(animate);
+            return;
+        }
+        
+        lastTime = currentTime;
+        
         ctx.clearRect(0, 0, width, height);
         
         // Update and draw particles
@@ -307,34 +330,45 @@ function initMeshBackground() {
             particle.draw();
         });
         
-        // Draw connections
+        // Draw connections with reduced complexity on mobile
+        const maxDistance = isMobile ? 100 : 150;
+        
         particles.forEach((p1, i) => {
             particles.slice(i + 1).forEach(p2 => {
                 const dx = p1.x - p2.x;
                 const dy = p1.y - p2.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < 150) {
+                if (distance < maxDistance) {
                     ctx.beginPath();
                     ctx.moveTo(p1.x, p1.y);
                     ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(67, 97, 238, ${0.2 * (1 - distance / 150)})`;
-                    ctx.lineWidth = 1;
+                    ctx.strokeStyle = `rgba(67, 97, 238, ${0.2 * (1 - distance / maxDistance)})`;
+                    ctx.lineWidth = isMobile ? 0.5 : 1;
                     ctx.stroke();
                 }
             });
         });
         
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
     }
     
-    animate();
+    animate(0);
     
     // Resize handler
     window.addEventListener('resize', debounce(() => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
     }, 250));
+    
+    // Pause animation when tab is not visible for battery saving
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            if (animationId) cancelAnimationFrame(animationId);
+        } else {
+            animate(0);
+        }
+    });
 }
 
 // ===================================
@@ -342,7 +376,7 @@ function initMeshBackground() {
 // ===================================
 
 function initMagneticButtons() {
-    if (state.isTouch) return;
+    if (state.isTouch) return; // Disable magnetic effects on touch devices for better performance
     
     const magneticElements = document.querySelectorAll('.magnetic-btn');
     
@@ -357,6 +391,15 @@ function initMagneticButtons() {
         });
         
         el.addEventListener('mouseleave', function() {
+            this.style.transform = 'translate(0, 0)';
+        });
+        
+        // Add touch feedback for mobile
+        el.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        el.addEventListener('touchend', function() {
             this.style.transform = 'translate(0, 0)';
         });
     });
@@ -506,15 +549,24 @@ function initTestimonialsCarousel() {
     // Touch support
     let touchStartX = 0;
     let touchEndX = 0;
+    let touchStartY = 0;
     
     track.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
-    });
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
     
     track.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
+        const touchEndY = e.changedTouches[0].screenY;
+        const deltaX = touchStartX - touchEndX;
+        const deltaY = Math.abs(touchStartY - touchEndY);
+        
+        // Only trigger swipe if horizontal movement is greater than vertical
+        if (Math.abs(deltaX) > 50 && deltaY < 100) {
+            handleSwipe();
+        }
+    }, { passive: true });
     
     function handleSwipe() {
         if (touchStartX - touchEndX > 50) {
