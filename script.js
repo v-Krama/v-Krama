@@ -49,7 +49,7 @@ function initAll() {
     initCyberTerminal();
     initAIChat();
     initEasterEggs();
-    initGlitchEffect();
+    initCyberDecode();
 
     console.log('%c✨ Portfolio Loaded', 'font-size: 20px; font-weight: bold; color: #4361EE;');
 }
@@ -427,8 +427,12 @@ function initTextScramble() {
 }
 
 function scrambleText(element, finalText) {
-    const chars = '!<>-_\\/[]{}—=+*^?#________';
+    const chars = '0123456789ABCDEF';
     let iteration = 0;
+
+    if (element.dataset.interval) clearInterval(parseInt(element.dataset.interval));
+
+    element.classList.add('scrambling');
 
     const interval = setInterval(() => {
         element.textContent = finalText
@@ -443,10 +447,14 @@ function scrambleText(element, finalText) {
 
         if (iteration >= finalText.length) {
             clearInterval(interval);
+            element.textContent = finalText;
+            element.classList.remove('scrambling');
         }
 
-        iteration += 1 / 3;
+        iteration += 1 / 2;
     }, 30);
+
+    element.dataset.interval = interval;
 }
 
 // ===================================
@@ -625,9 +633,9 @@ function initSkillsRadar() {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const radius = 120;
+    const centerX = canvas.width / 2;  // 200
+    const centerY = canvas.height / 2; // 200
+    const radius = 140; // Increased from 120 to give more space
 
     const skills = [
         { name: 'AI/ML Engineering', value: 98 },
@@ -641,145 +649,227 @@ function initSkillsRadar() {
     const numSkills = skills.length;
     const angleStep = (Math.PI * 2) / numSkills;
 
-    // Get theme colors
-    const styles = getComputedStyle(document.documentElement);
-    const primaryColor = styles.getPropertyValue('--primary-500').trim() || '#4361EE';
-    const neutralColor = styles.getPropertyValue('--neutral-300').trim() || '#D1D5DB';
-    const textColor = styles.getPropertyValue('--text-secondary').trim() || '#4B5563';
+    // Interactive State
+    let mouseX = 0;
+    let mouseY = 0;
+    let activeSkillIndex = -1;
 
-    // Draw grid
-    ctx.strokeStyle = neutralColor;
-    ctx.lineWidth = 1;
+    // Event Listeners for Interactivity
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
 
-    for (let i = 1; i <= 5; i++) {
-        ctx.beginPath();
-        const gridRadius = (radius / 5) * i;
+        // Find nearest skill point
+        let minDist = Infinity;
+        let nearestIndex = -1;
 
-        for (let j = 0; j <= numSkills; j++) {
-            const angle = angleStep * j - Math.PI / 2;
-            const x = centerX + gridRadius * Math.cos(angle);
-            const y = centerY + gridRadius * Math.sin(angle);
+        for (let i = 0; i < numSkills; i++) {
+            const angle = angleStep * i - Math.PI / 2;
+            const skillRadius = (skills[i].value / 100) * radius;
+            const x = centerX + skillRadius * Math.cos(angle);
+            const y = centerY + skillRadius * Math.sin(angle);
 
-            if (j === 0) {
-                ctx.moveTo(x, y);
-            } else {
-                ctx.lineTo(x, y);
+            const dist = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+            if (dist < 30) { // Interaction radius
+                minDist = dist;
+                nearestIndex = i;
             }
         }
-        ctx.stroke();
-    }
 
-    // Draw axes
-    for (let i = 0; i < numSkills; i++) {
-        const angle = angleStep * i - Math.PI / 2;
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.lineTo(
-            centerX + radius * Math.cos(angle),
-            centerY + radius * Math.sin(angle)
-        );
-        ctx.stroke();
-    }
+        activeSkillIndex = nearestIndex;
+    });
 
-    // Animate data
-    let progress = 0;
+    canvas.addEventListener('mouseleave', () => {
+        activeSkillIndex = -1;
+    });
+
+    // Animation Loop
+    let rotation = 0;
+    let pulse = 0;
 
     function animateRadar() {
-        if (progress < 1) {
-            progress += 0.02;
-            requestAnimationFrame(animateRadar);
-        }
+        // Get theme colors dynamically
+        const styles = getComputedStyle(document.documentElement);
+        const primaryColor = styles.getPropertyValue('--primary-500').trim() || '#4361EE';
+        const accentColor = styles.getPropertyValue('--secondary-400').trim() || '#4CC9F0';
+        const neutralColor = styles.getPropertyValue('--neutral-300').trim() || '#D1D5DB';
+        const textColor = styles.getPropertyValue('--text-primary').trim() || '#1F2937';
 
-        // Clear previous data
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Redraw grid
-        ctx.strokeStyle = neutralColor;
+        // Update animation state
+        rotation += 0.005;
+        pulse += 0.05;
+        const pulseFactor = 1 + Math.sin(pulse) * 0.02;
+
+        // 1. Draw Grid (Concentric Polygons)
+        ctx.strokeStyle = neutralColor + '40'; // Low opacity
         ctx.lineWidth = 1;
 
         for (let i = 1; i <= 5; i++) {
             ctx.beginPath();
             const gridRadius = (radius / 5) * i;
-
             for (let j = 0; j <= numSkills; j++) {
                 const angle = angleStep * j - Math.PI / 2;
                 const x = centerX + gridRadius * Math.cos(angle);
                 const y = centerY + gridRadius * Math.sin(angle);
-
-                if (j === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
-                }
+                if (j === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
             }
             ctx.stroke();
         }
 
-        // Redraw axes
+        // 2. Draw Axes
+        ctx.beginPath();
         for (let i = 0; i < numSkills; i++) {
             const angle = angleStep * i - Math.PI / 2;
-            ctx.beginPath();
             ctx.moveTo(centerX, centerY);
             ctx.lineTo(
                 centerX + radius * Math.cos(angle),
                 centerY + radius * Math.sin(angle)
             );
-            ctx.stroke();
         }
+        ctx.stroke();
 
-        // Draw data with animation
+        // 3. Draw Data Area (The "Radar" Shape)
         ctx.beginPath();
-        ctx.fillStyle = primaryColor + '40';
-        ctx.strokeStyle = primaryColor;
-        ctx.lineWidth = 2;
-
         for (let i = 0; i <= numSkills; i++) {
             const skill = skills[i % numSkills];
             const angle = angleStep * i - Math.PI / 2;
-            const skillRadius = (skill.value / 100) * radius * progress;
+            const skillRadius = (skill.value / 100) * radius * pulseFactor; // Add pulse
+            const x = centerX + skillRadius * Math.cos(angle);
+            const y = centerY + skillRadius * Math.sin(angle);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+
+        // Gradient Fill
+        const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+        gradient.addColorStop(0, primaryColor + '10'); // Very transparent center
+        gradient.addColorStop(1, primaryColor + '60'); // More opaque edge
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        // Glowing Border
+        ctx.strokeStyle = primaryColor;
+        ctx.lineWidth = 2;
+        ctx.shadowColor = primaryColor;
+        ctx.shadowBlur = 15;
+        ctx.stroke();
+        ctx.shadowBlur = 0; // Reset shadow
+
+        // 4. Draw Points & Active State
+        for (let i = 0; i < numSkills; i++) {
+            const skill = skills[i];
+            const angle = angleStep * i - Math.PI / 2;
+            const skillRadius = (skill.value / 100) * radius * pulseFactor;
             const x = centerX + skillRadius * Math.cos(angle);
             const y = centerY + skillRadius * Math.sin(angle);
 
-            if (i === 0) {
-                ctx.moveTo(x, y);
-            } else {
-                ctx.lineTo(x, y);
+            // Draw Point
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = primaryColor;
+            ctx.fill();
+
+            // Active Highlight
+            if (i === activeSkillIndex) {
+                // Glow effect for active point
+                ctx.beginPath();
+                ctx.arc(x, y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = accentColor + '80';
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(x, y, 12, 0, Math.PI * 2);
+                ctx.strokeStyle = accentColor;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Show Value Tooltip
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                ctx.roundRect(x - 20, y - 35, 40, 25, 5);
+                ctx.fill();
+
+                ctx.fillStyle = '#FFF';
+                ctx.font = 'bold 12px Inter';
+                ctx.textAlign = 'center';
+                ctx.fillText(`${skill.value}%`, x, y - 18);
             }
         }
 
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        // Draw points
+        // 5. Draw Labels with text wrapping
         for (let i = 0; i < numSkills; i++) {
             const skill = skills[i];
             const angle = angleStep * i - Math.PI / 2;
-            const skillRadius = (skill.value / 100) * radius * progress;
-            const x = centerX + skillRadius * Math.cos(angle);
-            const y = centerY + skillRadius * Math.sin(angle);
-
-            ctx.beginPath();
-            ctx.arc(x, y, 5, 0, Math.PI * 2);
-            ctx.fillStyle = primaryColor;
-            ctx.fill();
-        }
-
-        // Draw labels
-        ctx.fillStyle = textColor;
-        ctx.font = '12px Inter, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-
-        for (let i = 0; i < numSkills; i++) {
-            const skill = skills[i];
-            const angle = angleStep * i - Math.PI / 2;
-            const labelRadius = radius + 30;
+            const labelRadius = radius + 40; // Increased spacing
             const x = centerX + labelRadius * Math.cos(angle);
             const y = centerY + labelRadius * Math.sin(angle);
 
-            ctx.fillText(skill.name, x, y);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Set font size and style
+            if (i === activeSkillIndex) {
+                ctx.font = 'bold 12px Inter, sans-serif';
+                ctx.fillStyle = primaryColor;
+                ctx.shadowColor = primaryColor;
+                ctx.shadowBlur = 8;
+            } else {
+                ctx.font = '600 11px Inter, sans-serif';
+                ctx.fillStyle = textColor;
+                ctx.shadowBlur = 0;
+            }
+
+            // Split long text into multiple lines
+            const words = skill.name.split(' ');
+            const maxWidth = 80; // Maximum width for a line
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let j = 1; j < words.length; j++) {
+                const testLine = currentLine + ' ' + words[j];
+                const metrics = ctx.measureText(testLine);
+
+                if (metrics.width > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[j];
+                } else {
+                    currentLine = testLine;
+                }
+            }
+            lines.push(currentLine);
+
+            // Draw each line
+            const lineHeight = 13;
+            const startY = y - ((lines.length - 1) * lineHeight) / 2;
+
+            for (let j = 0; j < lines.length; j++) {
+                ctx.fillText(lines[j], x, startY + j * lineHeight);
+            }
+
+            ctx.shadowBlur = 0; // Reset shadow
         }
+
+        // 6. Scanning Line Animation (The "Radar" Sweep)
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(rotation);
+
+        const scanGradient = ctx.createLinearGradient(0, 0, radius, 0);
+        scanGradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
+        scanGradient.addColorStop(1, primaryColor + '40');
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, radius, -0.2, 0.2); // Small sector
+        ctx.fillStyle = scanGradient;
+        ctx.fill();
+        ctx.restore();
+
+        requestAnimationFrame(animateRadar);
     }
 
     // Start animation when visible
@@ -790,7 +880,7 @@ function initSkillsRadar() {
                 radarObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 });
 
     radarObserver.observe(canvas);
 }
@@ -1414,24 +1504,52 @@ function initBIOSBoot() {
 }
 
 // ===================================
-// HOLOGRAPHIC GLITCH EFFECT
+// CYBER DECODE ANIMATION
 // ===================================
 
-function initGlitchEffect() {
-    const headings = document.querySelectorAll('h1, h2');
+function initCyberDecode() {
+    const targets = document.querySelectorAll('h1, h2, .hero-title');
+    // Cleaner character set - Tech/Hex feel
+    const chars = '0123456789ABCDEF';
 
-    headings.forEach(el => {
-        el.classList.add('glitch-effect');
-        el.setAttribute('data-text', el.textContent);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const originalText = el.innerText;
+                // Store original text if not already stored
+                if (!el.dataset.value) el.dataset.value = originalText;
 
-        // Random glitch trigger
-        setInterval(() => {
-            if (Math.random() > 0.95) {
-                el.style.animation = 'none';
-                el.offsetHeight; /* trigger reflow */
-                el.style.animation = null;
+                el.classList.add('decoding');
+                let iterations = 0;
+                const interval = setInterval(() => {
+                    el.innerText = el.innerText.split('')
+                        .map((letter, index) => {
+                            if (index < iterations) {
+                                return el.dataset.value[index];
+                            }
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        })
+                        .join('');
+
+                    if (iterations >= el.dataset.value.length) {
+                        clearInterval(interval);
+                        el.innerText = el.dataset.value; // Ensure final text is correct
+                        el.classList.remove('decoding');
+                    }
+
+                    iterations += 1 / 2; // Speed up
+                }, 30);
+
+                observer.unobserve(el); // Only run once
             }
-        }, 3000);
+        });
+    }, { threshold: 0.5 });
+
+    targets.forEach(el => {
+        el.classList.add('cyber-decode');
+        el.dataset.value = el.innerText;
+        observer.observe(el);
     });
 }
 
