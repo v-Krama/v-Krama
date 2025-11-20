@@ -219,6 +219,9 @@ function initNavigation() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+
+                // Remove hash from URL
+                history.replaceState(null, null, ' ');
             }
         });
     });
