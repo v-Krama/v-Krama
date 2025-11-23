@@ -185,6 +185,16 @@ function initNavigation() {
                 document.body.style.overflow = '';
             }
         });
+
+        // Close menu on resize if switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
     }
 
     // Navbar scroll effect
@@ -299,7 +309,7 @@ function initMeshBackground() {
 
     // Reduce particle count on mobile for better performance
     const isMobile = window.innerWidth <= 768 || state.isTouch;
-    const particleCount = isMobile ? 20 : 50;
+    const particleCount = isMobile ? 15 : 40; // Reduced further for better mobile performance
 
     // Particles
     const particles = [];
@@ -403,7 +413,8 @@ function initMeshBackground() {
 // ===================================
 
 function initMagneticButtons() {
-    if (state.isTouch) return; // Disable magnetic effects on touch devices for better performance
+    // Disable magnetic effects on touch devices for better performance and UX
+    if (state.isTouch || window.innerWidth <= 768) return;
 
     const magneticElements = document.querySelectorAll('.magnetic-btn');
 

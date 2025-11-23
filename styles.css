@@ -2201,20 +2201,23 @@ textarea.form-control {
         top: 80px;
         left: 0;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100dvh;
         flex-direction: column;
         background: var(--bg-glass-strong);
         backdrop-filter: blur(var(--blur-xl));
+        -webkit-backdrop-filter: blur(var(--blur-xl));
         padding: var(--space-2xl);
-        transform: translateX(-100%);
+        transform: translateX(100%);
         transition: transform var(--transition-base);
         gap: var(--space-lg);
         overflow-y: auto;
         padding-bottom: calc(var(--space-2xl) + var(--safe-area-bottom));
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-menu.active {
         transform: translateX(0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .availability-text {
@@ -2233,6 +2236,9 @@ textarea.form-control {
     .btn {
         width: 100%;
         min-width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        /* Larger touch target */
     }
 
     .form-grid {
@@ -2241,19 +2247,26 @@ textarea.form-control {
 
     .footer-links {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
 
     .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
         line-height: 1.1;
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--space-xl);
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
     }
 
     .section {
-        padding: var(--space-2xl) 0;
+        padding: var(--space-3xl) 0;
     }
 
     /* Disable hover effects on touch devices */
@@ -2324,7 +2337,29 @@ textarea.form-control {
     }
 
     .container {
-        padding: 0 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .nav-content {
+        padding: var(--space-sm) 0;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+}
+
+/* Landscape Mode Fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .nav-menu {
+        padding-top: 20px;
+        justify-content: flex-start;
     }
 }
 
