@@ -840,6 +840,7 @@ h4 {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1992,7 +1993,7 @@ textarea.form-control {
 /* Responsive Certifications */
 @media (max-width: 768px) {
     .certifications-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: var(--space-lg);
     }
 
@@ -2178,7 +2179,7 @@ textarea.form-control {
     }
 
     .projects-grid-modern {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .footer-content {
@@ -2286,6 +2287,12 @@ textarea.form-control {
 
 /* Extra small screens */
 @media (max-width: 480px) {
+    :root {
+        --space-lg: 1rem;
+        --space-xl: 1.5rem;
+        --space-2xl: 2rem;
+    }
+
     .hero {
         padding-top: 60px;
         padding-left: 0.5rem;
