@@ -1,0 +1,55 @@
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* Increased gap */
+}
+
+.about-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text-container { /* Changed from .about-text to .about-text-container */
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-text-container p { /* Changed from .about-text p to .about-text-container p */
+  margin-bottom: 1.5rem; /* Increased margin-bottom */
+  line-height: 1.8; /* Slightly increased line height for better readability */
+  text-align: justify;
+}
+
+.about-text-container .highlight {
+    color: var(--neon-blue); /* Assuming you have a neon-blue variable or choose a suitable color */
+    font-weight: bold;
+}
+
+.about-title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+    }
+
+    .about-text-container { /* Changed from .about-text to .about-text-container */
+        text-align: left;
+    }
+
+    .about-text-container p {
+        text-align: justify;
+    }
+}

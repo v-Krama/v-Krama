@@ -7,6 +7,8 @@ import adexImg from '../assets/images/adex_apprenticeship.png';
 import roboticsImg from '../assets/images/robotics_bootcamp.png';
 import barberImg from '../assets/images/barber_cutting.png';
 import baristaImg from '../assets/images/barista.png';
+import ieltsImg from '../assets/images/IELTS.jpg';
+import './Journey.css';
 
 const journeyItems = [
     {
@@ -20,6 +22,12 @@ const journeyItems = [
         description: "Completed higher secondary education, focusing on science and technology.",
         image: img12th,
         category: "Education"
+    },
+    {
+        title: "IELTS Certification",
+        description: "Achieved a proficient score in the International English Language Testing System.",
+        image: ieltsImg,
+        category: "Certification"
     },
     {
         title: "Robotics Bootcamp",
@@ -57,63 +65,36 @@ const Journey = () => {
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="neon-text"
-                    style={{ marginBottom: '3rem', textAlign: 'center' }}
+                    className="neon-text journey-title"
                 >
                     MY JOURNEY
                 </motion.h2>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '2rem'
-                }}>
+                <div className="journey-grid">
                     {journeyItems.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="neon-border"
-                            style={{
-                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                borderRadius: '15px',
-                                overflow: 'hidden',
-                                display: 'flex',
-                                flexDirection: 'column'
-                            }}
+                            className="neon-border journey-item"
                         >
                             <div
-                                style={{ height: '200px', overflow: 'hidden', cursor: 'pointer' }}
+                                className="journey-item-image-container"
                                 onClick={() => setSelectedImage(item)}
                             >
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        transition: 'transform 0.3s ease'
-                                    }}
-                                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-                                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                    className="journey-item-image"
                                 />
                             </div>
-                            <div style={{ padding: '1.5rem', flex: 1 }}>
-                                <span style={{
-                                    fontSize: '0.8rem',
-                                    color: '#00f3ff',
-                                    border: '1px solid #00f3ff',
-                                    padding: '0.2rem 0.5rem',
-                                    borderRadius: '5px',
-                                    marginBottom: '0.5rem',
-                                    display: 'inline-block'
-                                }}>
+                            <div className="journey-item-content">
+                                <span className="journey-item-category">
                                     {item.category}
                                 </span>
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{item.title}</h3>
-                                <p style={{ color: '#a0a0a0', fontSize: '0.9rem' }}>{item.description}</p>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
                             </div>
                         </motion.div>
                     ))}

@@ -1,55 +1,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profileImg from '../assets/images/mProfile.JPG';
+import myProfileImage from '../assets/images/mProfile.JPG';
+import './About.css';
 
 const About = () => {
     return (
         <section id="about" className="section">
             <div className="container">
-                <motion.h2
-                    initial={{ opacity: 0, x: -50 }}
+                <motion.div
+                    initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="neon-text"
-                    style={{ marginBottom: '3rem', textAlign: 'center' }}
+                    transition={{ duration: 0.8 }}
+                    className="about-content"
                 >
-                    ABOUT ME
-                </motion.h2>
+                    <div className="about-image-container">
+                        <img src={myProfileImage} alt="My Profile" className="about-image" />
+                    </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', md: { flexDirection: 'row' } }}>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="neon-border"
-                        style={{
-                            width: '200px',
-                            height: '200px',
-                            borderRadius: '50%',
-                            overflow: 'hidden',
-                            flexShrink: 0
-                        }}
-                    >
-                        <img src={profileImg} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </motion.div>
+                    <div className="about-text-container">
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        style={{ maxWidth: '800px', textAlign: 'center' }}
-                    >
-                        <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>
-                            I am a passionate student currently in my third semester at Tech AI College of Management and Law, Rajarshi Janak University, located in New Baneshwor, Kathmandu.
+                        <h2 className="neon-text">ABOUT ME</h2>
+
+                        <p>
+
+                            Hello! I'm a passionate and driven student in my third semester at Tech AI College of Management and Law
+
+                            (affiliated with Rajarshi Janak University). My journey blends technical exploration with hands-on experience,
+
+                            constantly pushing boundaries.
+
                         </p>
-                        <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>
-                            My focus is on the intersection of Cybersecurity and Artificial Intelligence. I am constantly seeking to expand my knowledge beyond the curriculum, looking for internships and opportunities to apply my skills in real-world cloud architecture and security scenarios.
+
+                        <p>
+
+                            I am an <strong className="highlight">AWS Certified Solutions Architect – Associate</strong>, with proven English
+
+                            proficiency via <strong className="highlight">IELTS certification</strong>. My core expertise includes
+
+                            <strong className="highlight">cloud computing, ethical hacking, Python with AI, and web scraping</strong>.
+
                         </p>
-                        <p style={{ lineHeight: '1.6' }}>
-                            I thrive on solving complex problems and building secure, scalable systems using the latest technologies.
+
+                        <p>
+
+                            My diverse background, from a Robotics Bootcamp and an Adex apprenticeship to roles as a barista and barber,
+
+                            has instilled in me precision, customer service, and creativity. I actively seek internships or job opportunities
+
+                            to apply my skills, learn continuously, and contribute to innovative projects. Let's connect and build the future together!
+
                         </p>
-                    </motion.div>
-                </div>
+
+                    </div>                </motion.div>
             </div>
         </section>
     );
