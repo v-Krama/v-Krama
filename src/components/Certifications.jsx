@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ImageModal from './ImageModal';
 import awsBadge from '../assets/images/aws-certified-solutions-architect-associate.png';
 import cehBadge from '../assets/images/CEH.png';
 import pythonBadge from '../assets/images/pythonAI.png';
@@ -30,6 +31,8 @@ const certifications = [
 ];
 
 const Certifications = () => {
+    const [selectedImage, setSelectedImage] = React.useState(null);
+
     return (
         <section id="certifications" className="section">
             <div className="container">
@@ -63,7 +66,12 @@ const Certifications = () => {
                             }}
                         >
                             {cert.image && (
-                                <img src={cert.image} alt={cert.title} style={{ width: '150px', marginBottom: '1.5rem' }} />
+                                <img
+                                    src={cert.image}
+                                    alt={cert.title}
+                                    style={{ width: '150px', marginBottom: '1.5rem', cursor: 'pointer' }}
+                                    onClick={() => setSelectedImage(cert)}
+                                />
                             )}
                             <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{cert.title}</h3>
                             <p style={{ color: '#a0a0a0', marginBottom: '1rem' }}>{cert.issuer} | {cert.date}</p>
@@ -84,6 +92,13 @@ const Certifications = () => {
                     ))}
                 </div>
             </div>
+
+            <ImageModal
+                isOpen={!!selectedImage}
+                onClose={() => setSelectedImage(null)}
+                imageSrc={selectedImage?.image}
+                altText={selectedImage?.title}
+            />
         </section>
     );
 };

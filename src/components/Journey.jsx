@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ImageModal from './ImageModal';
 import img10th from '../assets/images/10th.jpg';
 import img12th from '../assets/images/12th.jpg';
 import adexImg from '../assets/images/adex_apprenticeship.png';
@@ -47,6 +48,8 @@ const journeyItems = [
 ];
 
 const Journey = () => {
+    const [selectedImage, setSelectedImage] = React.useState(null);
+
     return (
         <section id="journey" className="section">
             <div className="container">
@@ -80,7 +83,10 @@ const Journey = () => {
                                 flexDirection: 'column'
                             }}
                         >
-                            <div style={{ height: '200px', overflow: 'hidden' }}>
+                            <div
+                                style={{ height: '200px', overflow: 'hidden', cursor: 'pointer' }}
+                                onClick={() => setSelectedImage(item)}
+                            >
                                 <img
                                     src={item.image}
                                     alt={item.title}
@@ -113,6 +119,13 @@ const Journey = () => {
                     ))}
                 </div>
             </div>
+
+            <ImageModal
+                isOpen={!!selectedImage}
+                onClose={() => setSelectedImage(null)}
+                imageSrc={selectedImage?.image}
+                altText={selectedImage?.title}
+            />
         </section>
     );
 };
