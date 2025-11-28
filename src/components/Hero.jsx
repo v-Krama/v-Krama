@@ -21,16 +21,40 @@ function RotatingSphere() {
 }
 
 const Hero = () => {
+    const [isInView, setIsInView] = React.useState(true);
+    const containerRef = useRef();
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <section id="home" className="hero-section">
+        <section id="home" className="hero-section" ref={containerRef}>
             <div className="hero-canvas-container">
-                <Canvas>
-                    <ambientLight intensity={0.5} />
-                    <pointLight position={[10, 10, 10]} />
-                    <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-                    <RotatingSphere />
-                    <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-                </Canvas>
+                {isInView && (
+                    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 75 }} frameloop="demand">
+                        <ambientLight intensity={0.5} />
+                        <pointLight position={[10, 10, 10]} />
+                        <Stars radius={100} depth={50} count={2000} factor={3} saturation={0} fade speed={1} />
+                        <RotatingSphere />
+                        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} enablePan={false} />
+                    </Canvas>
+                )}
             </div>
 
             <div className="container hero-content">

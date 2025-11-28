@@ -1,12 +1,16 @@
 :root {
   --color-bg: #030303;
-  --color-primary: #00f3ff; /* Cyan Neon */
-  --color-secondary: #bc13fe; /* Purple Neon */
-  --color-accent: #ffe600; /* Yellow Neon */
+  --color-primary: #00f3ff;
+  /* Cyan Neon */
+  --color-secondary: #bc13fe;
+  /* Purple Neon */
+  --color-accent: #ffe600;
+  /* Yellow Neon */
   --color-text: #ffffff;
   --color-text-dim: #a0a0a0;
   --font-main: 'Poppins', sans-serif;
-  --font-display: 'Orbitron', sans-serif; /* Futuristic font */
+  --font-display: 'Orbitron', sans-serif;
+  /* Futuristic font */
 }
 
 * {
@@ -30,16 +34,29 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
 
 a {
   color: var(--color-primary);
@@ -80,6 +97,9 @@ a:hover {
 .section {
   padding: 100px 0;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+  /* Estimate height to prevent scrollbar jumping */
 }
 
 .neon-text {
@@ -97,18 +117,23 @@ a:hover {
   0% {
     transform: translate(0);
   }
+
   20% {
     transform: translate(-2px, 2px);
   }
+
   40% {
     transform: translate(-2px, -2px);
   }
+
   60% {
     transform: translate(2px, 2px);
   }
+
   80% {
     transform: translate(2px, -2px);
   }
+
   100% {
     transform: translate(0);
   }

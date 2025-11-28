@@ -61,6 +61,9 @@ const Certifications = () => {
                                     alt={cert.title}
                                     className="certification-item-image"
                                     onClick={() => setSelectedImage(cert)}
+                                    loading="lazy"
+                                    width="150"
+                                    height="150"
                                 />
                             )}
                             <h3>{cert.title}</h3>

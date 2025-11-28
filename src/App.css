@@ -77,21 +77,23 @@
   .main-nav ul {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 70%;
     height: 100vh;
     background-color: rgba(3, 3, 3, 0.95);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: right 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 1px solid var(--color-primary);
     box-shadow: -5px 0 15px rgba(0, 243, 255, 0.1);
+    will-change: transform;
   }
 
   .main-nav ul.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .main-nav ul li {

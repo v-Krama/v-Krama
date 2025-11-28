@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Hero from './components/Hero';
-import About from './components/About';
-import Journey from './components/Journey';
-import Skills from './components/Skills';
-import Certifications from './components/Certifications';
-import Contact from './components/Contact';
-import ScrollToTop from './components/ScrollToTop';
 import './App.css';
+
+// Lazy load components
+const About = lazy(() => import('./components/About'));
+const Journey = lazy(() => import('./components/Journey'));
+const Skills = lazy(() => import('./components/Skills'));
+const Certifications = lazy(() => import('./components/Certifications'));
+const Contact = lazy(() => import('./components/Contact'));
+const ScrollToTop = lazy(() => import('./components/ScrollToTop'));
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -78,17 +80,21 @@ function App() {
 
       <main>
         <Hero />
-        <About />
-        <Journey />
-        <Skills />
-        <Certifications />
-        <Contact />
+        <Suspense fallback={<div className="loading-fallback">Loading...</div>}>
+          <About />
+          <Journey />
+          <Skills />
+          <Certifications />
+          <Contact />
+        </Suspense>
       </main>
 
       <footer className="main-footer">
         <p>&copy; {new Date().getFullYear()} V-Krama. All rights reserved.</p>
       </footer>
-      <ScrollToTop />
+      <Suspense fallback={null}>
+        <ScrollToTop />
+      </Suspense>
     </div>
   );
 }

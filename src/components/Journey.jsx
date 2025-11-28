@@ -87,6 +87,9 @@ const Journey = () => {
                                     src={item.image}
                                     alt={item.title}
                                     className="journey-item-image"
+                                    loading="lazy"
+                                    width="300"
+                                    height="200"
                                 />
                             </div>
                             <div className="journey-item-content">
