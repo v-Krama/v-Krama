@@ -10,6 +10,7 @@ import './App.css';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,23 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    closeMobileMenu();
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -32,13 +50,24 @@ function App() {
     <div className="App">
       <nav className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <a href="#" className="logo">
+          <a href="#home" className="logo" onClick={(e) => handleNavClick(e, '#home')}>
             v-Krama
           </a>
-          <ul>
+
+          <button
+            className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle navigation"
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+
+          <ul className={mobileMenuOpen ? 'active' : ''}>
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>
+                <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>
                   {link.name}
                 </a>
               </li>

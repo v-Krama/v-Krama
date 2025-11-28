@@ -24,7 +24,7 @@ const Contact = () => {
                     <div className="neon-border contact-form-wrapper">
                         <iframe
                             src="https://docs.google.com/forms/d/e/1FAIpQLSeg90Kj9-eX7zMwpu1zEfWijmXpNY9kNfTt1gw29E0jpr3WXQ/viewform?embedded=true"
-                            width="640"
+                            width="100%"
                             height="865"
                             frameBorder="0"
                             marginHeight="0"
