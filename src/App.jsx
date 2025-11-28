@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
+import Journey from './components/Journey';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
@@ -19,6 +20,7 @@ function App() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Journey', href: '#journey' },
     { name: 'Skills', href: '#skills' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
@@ -57,6 +59,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Journey />
         <Skills />
         <Certifications />
         <Contact />

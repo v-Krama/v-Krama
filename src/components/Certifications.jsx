@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import awsBadge from '../assets/images/aws-certified-solutions-architect-associate.png';
+import cehBadge from '../assets/images/CEH.png';
+import pythonBadge from '../assets/images/pythonAI.png';
 
 const certifications = [
     {
@@ -15,12 +17,14 @@ const certifications = [
         title: "Ethical Hacking Training",
         issuer: "Training Institute",
         date: "2024",
+        image: cehBadge,
         doc: "./documents/EthicalHacking.pdf"
     },
     {
         title: "Python with AI Training",
         issuer: "Training Institute",
         date: "2024",
+        image: pythonBadge,
         doc: "./documents/python with AI training.pdf"
     }
 ];
