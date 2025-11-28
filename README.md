@@ -91,9 +91,9 @@ This portfolio is built with cutting-edge technologies to deliver a stunning, in
 | Certification | Issuer | Year | Verification |
 |--------------|--------|------|--------------|
 | **AWS Certified Solutions Architect – Associate** | Amazon Web Services | 2025 | [🔗 Credly Badge](https://www.credly.com/badges/875eb788-b18b-4302-98cd-96cead961d5c/public_url) |
-| **Ethical Hacking Training** | Training Institute | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/EthicalHacking.pdf) |
-| **Python with AI Training** | Training Institute | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/python%20with%20AI%20training.pdf) |
-| **IELTS Certification** | British Council | - | English Proficiency |
+| **Ethical Hacking Training** | Broadwayinfosys | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/EthicalHacking.pdf) |
+| **Python with AI Training** | Broadwayinfosys | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/python%20with%20AI%20training.pdf) |
+| **IELTS Certification** | British Council | 2024 | English Proficiency |
 
 ---
 
@@ -150,95 +150,6 @@ This portfolio is built with cutting-edge technologies to deliver a stunning, in
 - 🐍 **Python with AI** - Machine learning and automation
 - ☁️ **AWS Solutions Architect** - Cloud architecture and best practices
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/v-Krama.git
-
-# Navigate to project directory
-cd v-Krama
-
-# Install dependencies
-npm install
-```
-
-### Development
-
-```bash
-# Start development server
-npm run dev
-
-# The site will be available at http://localhost:5173
-```
-
-### Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-### Linting
-
-```bash
-# Run ESLint
-npm run lint
-```
-
----
-
-## 🌐 Live Website
-
-**Experience the full interactive portfolio:**
-
-### 🔗 **[bikram-tamang.com.np](https://bikram-tamang.com.np)**
-
-The live website features:
-- ✨ Interactive 3D animations
-- 🎨 Cyberpunk-themed design
-- 📱 Fully responsive layout
-- 🖼️ Certification gallery
-- 📧 Contact form
-- 🚀 Smooth scroll navigation
-
----
-
-## 📂 Project Structure
-
-```
-v-Krama/
-├── public/              # Static assets
-├── src/
-│   ├── assets/         # Images and media files
-│   ├── components/     # React components
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Journey.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Certifications.jsx
-│   │   └── Contact.jsx
-│   ├── App.jsx         # Main app component
-│   ├── main.jsx        # Entry point
-│   └── index.css       # Global styles
-├── index.html          # HTML template
-├── vite.config.js      # Vite configuration
-└── package.json        # Dependencies
-```
-
----
-
 ## 📫 Connect With Me
 
 I'm always open to discussing new opportunities, collaborations, or just connecting with fellow tech enthusiasts!
@@ -253,24 +164,3 @@ I'm always open to discussing new opportunities, collaborations, or just connect
 
 © 2025 v-Krama (Bikram Tamang). All rights reserved.
 
----
-
-## 🙏 Acknowledgments
-
-- **Three.js** for amazing 3D graphics capabilities
-- **Framer Motion** for smooth animations
-- **React Three Fiber** for React integration with Three.js
-- **Vite** for blazing fast development experience
-- **AWS** for cloud computing education and certification
-
----
-
-<div align="center">
-
-### ⭐ If you like this project, please give it a star!
-
-**Built with ❤️ by v-Krama**
-
-**[Visit Live Site →](https://bikram-tamang.com.np)**
-
-</div>
