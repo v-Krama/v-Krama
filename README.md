@@ -161,7 +161,7 @@ This portfolio is built with cutting-edge technologies to deliver a stunning, in
 ### Installation
 
 ```bash
-# Clone the repository
+# Clone the repo
 git clone https://github.com/yourusername/v-Krama.git
 
 # Navigate to project directory
