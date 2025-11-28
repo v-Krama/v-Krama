@@ -91,9 +91,9 @@ This portfolio is built with cutting-edge technologies to deliver a stunning, in
 | Certification | Issuer | Year | Verification |
 |--------------|--------|------|--------------|
 | **AWS Certified Solutions Architect – Associate** | Amazon Web Services | 2025 | [🔗 Credly Badge](https://www.credly.com/badges/875eb788-b18b-4302-98cd-96cead961d5c/public_url) |
-| **Ethical Hacking Training** | Training Institute | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/EthicalHacking.pdf) |
-| **Python with AI Training** | Training Institute | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/python%20with%20AI%20training.pdf) |
-| **IELTS Certification** | British Council | - | English Proficiency |
+| **Ethical Hacking Training** | Broadwayinfosys | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/EthicalHacking.pdf) |
+| **Python with AI Training** | Broadwayinfosys | 2024 | [📄 Certificate](https://bikram-tamang.com.np/documents/python%20with%20AI%20training.pdf) |
+| **IELTS Certification** | British Council | 2024 | English Proficiency |
 
 ---
 
@@ -150,6 +150,7 @@ This portfolio is built with cutting-edge technologies to deliver a stunning, in
 - 🐍 **Python with AI** - Machine learning and automation
 - ☁️ **AWS Solutions Architect** - Cloud architecture and best practices
 
+<<<<<<< HEAD
 ---
 
 ## 🚀 Getting Started
@@ -239,6 +240,8 @@ v-Krama/
 
 ---
 
+=======
+>>>>>>> 566e76c40718493ce4eaa4781332621f5d6944c5
 ## 📫 Connect With Me
 
 I'm always open to discussing new opportunities, collaborations, or just connecting with fellow tech enthusiasts!
@@ -253,24 +256,3 @@ I'm always open to discussing new opportunities, collaborations, or just connect
 
 © 2025 v-Krama (Bikram Tamang). All rights reserved.
 
----
-
-## 🙏 Acknowledgments
-
-- **Three.js** for amazing 3D graphics capabilities
-- **Framer Motion** for smooth animations
-- **React Three Fiber** for React integration with Three.js
-- **Vite** for blazing fast development experience
-- **AWS** for cloud computing education and certification
-
----
-
-<div align="center">
-
-### ⭐ If you like this project, please give it a star!
-
-**Built with ❤️ by v-Krama**
-
-**[Visit Live Site →](https://bikram-tamang.com.np)**
-
-</div>
