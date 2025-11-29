@@ -47,7 +47,7 @@ const Hero = () => {
         <section id="home" className="hero-section" ref={containerRef}>
             <div className="hero-canvas-container">
                 {isInView && (
-                    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 75 }} frameloop="demand">
+                    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 75 }}>
                         <ambientLight intensity={0.5} />
                         <pointLight position={[10, 10, 10]} />
                         <Stars radius={100} depth={50} count={2000} factor={3} saturation={0} fade speed={1} />
