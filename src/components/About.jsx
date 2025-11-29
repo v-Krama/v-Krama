@@ -35,7 +35,7 @@ const About = () => {
 
                             I am an <strong className="highlight">AWS Certified Solutions Architect – Associate</strong>, with proven English
 
-                            proficiency via <strong className="highlight">IELTS certification</strong>. My core expertise includes
+                            proficiency via <strong className="highlight">IELTS certification</strong>. My core expertise includes{' '}
 
                             <strong className="highlight">cloud computing, ethical hacking, Python with AI, and web scraping</strong>.
 
