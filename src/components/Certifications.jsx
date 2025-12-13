@@ -17,17 +17,19 @@ const certifications = [
     },
     {
         title: "Ethical Hacking Training",
-        issuer: "Training Institute",
+        issuer: "Broadway Infosys",
         date: "2024",
         image: cehBadge,
-        doc: "/documents/EthicalHacking.pdf"
+        doc: "/documents/EthicalHacking.pdf",
+        link: "https://broadwayinfosys.com/verify" // Placeholder link
     },
     {
         title: "Python with AI Training",
-        issuer: "Training Institute",
+        issuer: "Broadway Infosys",
         date: "2024",
         image: pythonBadge,
-        doc: "/documents/python with AI training.pdf"
+        doc: "/documents/python with AI training.pdf",
+        link: "https://broadwayinfosys.com/verify" // Placeholder link
     }
 ];
 
