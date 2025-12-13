@@ -21,7 +21,7 @@ const certifications = [
         date: "2024",
         image: cehBadge,
         doc: "/documents/EthicalHacking.pdf",
-        link: "https://broadwayinfosys.com/verify" // Placeholder link
+        link: "https://broadwayinfosys.com/certificate-verification-response"
     },
     {
         title: "Python with AI Training",
@@ -29,7 +29,7 @@ const certifications = [
         date: "2024",
         image: pythonBadge,
         doc: "/documents/python with AI training.pdf",
-        link: "https://broadwayinfosys.com/verify" // Placeholder link
+        link: "https://broadwayinfosys.com/certificate-verification-response"
     }
 ];
 
@@ -74,7 +74,7 @@ const Certifications = () => {
                             <div className="certification-item-links">
                                 {cert.link && (
                                     <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                                        Verify Credly
+                                        {cert.link.includes('credly') ? 'Verify Credly' : 'Verify Certificate'}
                                     </a>
                                 )}
                                 {cert.doc && (
