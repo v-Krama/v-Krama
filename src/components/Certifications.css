@@ -1,49 +1,105 @@
+/* Existing styles... */
+
 .certifications-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .certification-item {
-  width: 100%;
-  max-width: 350px;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background: rgba(10, 25, 47, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
 }
 
 .certification-item-image {
-  width: 150px;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.certification-item-image:hover {
+    transform: scale(1.1);
+}
+
+/* New Logic for PDF thumbnails */
+.certification-item-image-container {
+    width: 100%;
+    height: 200px; /* Adjustable height for PDF preview */
+    margin-bottom: 1rem;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.certification-item-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none; /* Let clicks pass through if supported, else overlay handles it */
+}
+
+/* Overlay to ensure clicks are captured for the modal, not the PDF viewer controls */
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .certification-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
 }
 
 .certification-item p {
-  color: #a0a0a0;
-  margin-bottom: 1rem;
+    color: #8892b0;
+    margin-bottom: 1rem;
 }
 
 .certification-item-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .certification-item-links a {
-  font-size: 0.9rem;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.certifications-title {
-  margin-bottom: 3rem;
-  text-align: center;
+.certification-item-links a:hover {
+    background: rgba(100, 255, 218, 0.1);
 }

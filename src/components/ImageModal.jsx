@@ -25,21 +25,36 @@ const ImageModal = ({ isOpen, onClose, imageSrc, altText }) => {
                     cursor: 'pointer'
                 }}
             >
-                <motion.img
-                    src={imageSrc}
-                    alt={altText}
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.8, opacity: 0 }}
-                    style={{
-                        maxWidth: '90%',
-                        maxHeight: '90%',
-                        objectFit: 'contain',
-                        borderRadius: '10px',
-                        boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)'
-                    }}
-                    onClick={(e) => e.stopPropagation()}
-                />
+                {imageSrc && imageSrc.toLowerCase().endsWith('.pdf') ? (
+                    <iframe
+                        src={imageSrc}
+                        title="Certificate PDF"
+                        style={{
+                            width: '90%',
+                            height: '90%',
+                            border: 'none',
+                            borderRadius: '10px',
+                            boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)',
+                            background: '#fff' // Ensure PDF is readable against dark modal
+                        }}
+                    />
+                ) : (
+                    <motion.img
+                        src={imageSrc}
+                        alt={altText}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.8, opacity: 0 }}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                            maxWidth: '90%',
+                            maxHeight: '90%',
+                            objectFit: 'contain',
+                            borderRadius: '10px',
+                            boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)'
+                        }}
+                    />
+                )}
                 <button
                     onClick={onClose}
                     style={{

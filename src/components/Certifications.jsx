@@ -19,7 +19,8 @@ const certifications = [
         title: "Ethical Hacking Training",
         issuer: "Broadway Infosys",
         date: "2024",
-        image: cehBadge,
+        // image: cehBadge, // Removed image to use doc as thumbnail
+        image: "/documents/EthicalHacking.pdf",
         doc: "/documents/EthicalHacking.pdf",
         link: "https://broadwayinfosys.com/certificate-verification-response"
     },
@@ -27,7 +28,8 @@ const certifications = [
         title: "Python with AI Training",
         issuer: "Broadway Infosys",
         date: "2024",
-        image: pythonBadge,
+        // image: pythonBadge, // Removed image to use doc as thumbnail
+        image: "/documents/python with AI training.pdf",
         doc: "/documents/python with AI training.pdf",
         link: "https://broadwayinfosys.com/certificate-verification-response"
     }
@@ -58,15 +60,30 @@ const Certifications = () => {
                             className="neon-border certification-item"
                         >
                             {cert.image && (
-                                <img
-                                    src={cert.image}
-                                    alt={cert.title}
-                                    className="certification-item-image"
-                                    onClick={() => setSelectedImage(cert)}
-                                    loading="lazy"
-                                    width="150"
-                                    height="150"
-                                />
+                                <div className="certification-item-image-container" onClick={() => setSelectedImage(cert)}>
+                                    {cert.image.endsWith('.pdf') ? (
+                                        <div className="pdf-thumbnail-wrapper">
+                                            <embed
+                                                src={cert.image}
+                                                type="application/pdf"
+                                                className="certification-item-pdf"
+                                                width="100%"
+                                                height="100%"
+                                            />
+                                            {/* Overlay to capture clicks */}
+                                            <div className="pdf-overlay"></div>
+                                        </div>
+                                    ) : (
+                                        <img
+                                            src={cert.image}
+                                            alt={cert.title}
+                                            className="certification-item-image"
+                                            loading="lazy"
+                                            width="150"
+                                            height="150"
+                                        />
+                                    )}
+                                </div>
                             )}
                             <h3>{cert.title}</h3>
                             <p>{cert.issuer} | {cert.date}</p>
