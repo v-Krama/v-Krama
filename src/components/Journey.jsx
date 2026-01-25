@@ -1,56 +1,75 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ImageModal from './ImageModal';
-import img10th from '../assets/images/10th.jpg';
-import img12th from '../assets/images/12th.jpg';
-import adexImg from '../assets/images/adex_apprenticeship.png';
-import roboticsImg from '../assets/images/robotics_bootcamp.png';
-import barberImg from '../assets/images/barber_cutting.png';
-import baristaImg from '../assets/images/barista.png';
-import ieltsImg from '../assets/images/IELTS.jpg';
+
+// Thumbnails
+import thumb10th from '../assets/images/thumbnails/10th.webp';
+import thumb12th from '../assets/images/thumbnails/12th.webp';
+import thumbAdex from '../assets/images/thumbnails/adex_apprenticeship.webp';
+import thumbRobotics from '../assets/images/thumbnails/robotics_bootcamp.webp';
+import thumbBarber from '../assets/images/thumbnails/barber_cutting.webp';
+import thumbBarista from '../assets/images/thumbnails/barista.webp';
+import thumbIelts from '../assets/images/thumbnails/IELTS.webp';
+
+// Optimized Large Images
+import large10th from '../assets/images/optimized/10th.webp';
+import large12th from '../assets/images/optimized/12th.webp';
+import largeAdex from '../assets/images/optimized/adex_apprenticeship.webp';
+import largeRobotics from '../assets/images/optimized/robotics_bootcamp.webp';
+import largeBarber from '../assets/images/optimized/barber_cutting.webp';
+import largeBarista from '../assets/images/optimized/barista.webp';
+import largeIelts from '../assets/images/optimized/IELTS.webp';
+
 import './Journey.css';
 
 const journeyItems = [
     {
         title: "Secondary Education (10th)",
         description: "Completed secondary education with a strong foundation.",
-        image: img10th,
+        thumbnail: thumb10th,
+        largeImage: large10th,
         category: "Education"
     },
     {
         title: "Higher Secondary (12th)",
         description: "Completed higher secondary education, focusing on science and technology.",
-        image: img12th,
+        thumbnail: thumb12th,
+        largeImage: large12th,
         category: "Education"
     },
     {
         title: "IELTS Certification",
         description: "Achieved a proficient score in the International English Language Testing System.",
-        image: ieltsImg,
+        thumbnail: thumbIelts,
+        largeImage: largeIelts,
         category: "Certification"
     },
     {
         title: "Robotics Bootcamp",
         description: "Hands-on experience in building and programming robots.",
-        image: roboticsImg,
+        thumbnail: thumbRobotics,
+        largeImage: largeRobotics,
         category: "Workshop"
     },
     {
         title: "Adex Apprenticeship",
         description: "Professional apprenticeship experience.",
-        image: adexImg,
+        thumbnail: thumbAdex,
+        largeImage: largeAdex,
         category: "Experience"
     },
     {
         title: "Barista Experience",
         description: "Developed customer service skills and coffee brewing expertise.",
-        image: baristaImg,
+        thumbnail: thumbBarista,
+        largeImage: largeBarista,
         category: "Experience"
     },
     {
         title: "Barbering",
         description: "Honed precision and creativity through barbering.",
-        image: barberImg,
+        thumbnail: thumbBarber,
+        largeImage: largeBarber,
         category: "Experience"
     }
 ];
@@ -84,7 +103,7 @@ const Journey = () => {
                                 onClick={() => setSelectedImage(item)}
                             >
                                 <img
-                                    src={item.image}
+                                    src={item.thumbnail}
                                     alt={item.title}
                                     className="journey-item-image"
                                     loading="lazy"
@@ -107,7 +126,7 @@ const Journey = () => {
             <ImageModal
                 isOpen={!!selectedImage}
                 onClose={() => setSelectedImage(null)}
-                imageSrc={selectedImage?.image}
+                imageSrc={selectedImage?.largeImage}
                 altText={selectedImage?.title}
             />
         </section>

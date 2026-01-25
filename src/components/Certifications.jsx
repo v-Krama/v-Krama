@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ImageModal from './ImageModal';
-import awsBadge from '../assets/images/aws-certified-solutions-architect-associate.png';
-import cehBadge from '../assets/images/CEH.png';
-import pythonBadge from '../assets/images/pythonAI.png';
+import thumbAws from '../assets/images/thumbnails/aws-certified-solutions-architect-associate.webp';
+import thumbCeh from '../assets/images/thumbnails/CEH.webp';
+import thumbPython from '../assets/images/thumbnails/pythonAI.webp';
+
+import largeAws from '../assets/images/optimized/aws-certified-solutions-architect-associate.webp';
+import largeCeh from '../assets/images/optimized/CEH.webp';
+import largePython from '../assets/images/optimized/pythonAI.webp';
+
 import './Certifications.css';
 
 const certifications = [
@@ -11,7 +16,8 @@ const certifications = [
         title: "AWS Certified Solutions Architect – Associate",
         issuer: "Amazon Web Services",
         date: "2025",
-        image: awsBadge,
+        thumbnail: thumbAws,
+        largeImage: largeAws,
         link: "https://www.credly.com/badges/875eb788-b18b-4302-98cd-96cead961d5c/public_url",
         doc: "/documents/aws solution architect training.pdf"
     },
@@ -19,8 +25,8 @@ const certifications = [
         title: "Ethical Hacking Training",
         issuer: "Broadway Infosys",
         date: "2024",
-        // image: cehBadge, // Removed image to use doc as thumbnail
-        image: "/documents/EthicalHacking.pdf",
+        thumbnail: thumbCeh,
+        largeImage: largeCeh,
         doc: "/documents/EthicalHacking.pdf",
         link: "https://broadwayinfosys.com/certificate-verification-response"
     },
@@ -28,8 +34,8 @@ const certifications = [
         title: "Python with AI Training",
         issuer: "Broadway Infosys",
         date: "2024",
-        // image: pythonBadge, // Removed image to use doc as thumbnail
-        image: "/documents/python with AI training.pdf",
+        thumbnail: thumbPython,
+        largeImage: largePython,
         doc: "/documents/python with AI training.pdf",
         link: "https://broadwayinfosys.com/certificate-verification-response"
     }
@@ -59,32 +65,19 @@ const Certifications = () => {
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             className="neon-border certification-item"
                         >
-                            {cert.image && (
-                                <div className="certification-item-image-container" onClick={() => setSelectedImage(cert)}>
-                                    {cert.image.endsWith('.pdf') ? (
-                                        <div className="pdf-thumbnail-wrapper">
-                                            <embed
-                                                src={cert.image}
-                                                type="application/pdf"
-                                                className="certification-item-pdf"
-                                                width="100%"
-                                                height="100%"
-                                            />
-                                            {/* Overlay to capture clicks */}
-                                            <div className="pdf-overlay"></div>
-                                        </div>
-                                    ) : (
-                                        <img
-                                            src={cert.image}
-                                            alt={cert.title}
-                                            className="certification-item-image"
-                                            loading="lazy"
-                                            width="150"
-                                            height="150"
-                                        />
-                                    )}
-                                </div>
-                            )}
+                            <div
+                                className="certification-item-image-container"
+                                onClick={() => setSelectedImage(cert)}
+                            >
+                                <img
+                                    src={cert.thumbnail}
+                                    alt={cert.title}
+                                    className="certification-item-image"
+                                    loading="lazy"
+                                    width="150"
+                                    height="150"
+                                />
+                            </div>
                             <h3>{cert.title}</h3>
                             <p>{cert.issuer} | {cert.date}</p>
 
@@ -108,7 +101,7 @@ const Certifications = () => {
             <ImageModal
                 isOpen={!!selectedImage}
                 onClose={() => setSelectedImage(null)}
-                imageSrc={selectedImage?.image}
+                imageSrc={selectedImage?.largeImage}
                 altText={selectedImage?.title}
             />
         </section>
